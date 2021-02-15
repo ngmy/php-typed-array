@@ -1,0 +1,10 @@
+parameters:
+  bootstrapFiles:
+    - tools/phpunit
+  level: max
+  paths:
+    - src
+    - tests
+  reportUnmatchedIgnoredErrors: false
+
+# vim: set ft=yaml:
