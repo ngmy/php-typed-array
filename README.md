@@ -1,4 +1,8 @@
 # PHP Typed Array
+[![PHP CI](https://github.com/ngmy/php-typed-array/workflows/PHP%20CI/badge.svg)](https://github.com/ngmy/php-typed-array/actions?query=workflow%3A%22PHP+CI%22)
+[![Coverage Status](https://coveralls.io/repos/github/ngmy/php-typed-array/badge.svg?branch=master)](https://coveralls.io/github/ngmy/php-typed-array?branch=master)
+[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
+
 PHP Typed Array is the typed array for PHP.
 
 - Can create the typed array of the array, float, int, object, resource, or string type, or the specified class, interface, or trait type
