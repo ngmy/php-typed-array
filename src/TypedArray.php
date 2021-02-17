@@ -51,8 +51,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     public static function ofArray(array $items = []): self
     {
         $typedArray = new self(self::TYPES['array']);
-        foreach ($items as $key => $value) {
-            $typedArray[$key] = $value;
+        foreach ($items as $key => $item) {
+            $typedArray[$key] = $item;
         }
         return $typedArray;
     }
@@ -66,8 +66,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     public static function ofFloat(array $items = []): self
     {
         $typedArray = new self(self::TYPES['float']);
-        foreach ($items as $key => $value) {
-            $typedArray[$key] = $value;
+        foreach ($items as $key => $item) {
+            $typedArray[$key] = $item;
         }
         return $typedArray;
     }
@@ -81,8 +81,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     public static function ofInt(array $items = []): self
     {
         $typedArray = new self(self::TYPES['int']);
-        foreach ($items as $key => $value) {
-            $typedArray[$key] = $value;
+        foreach ($items as $key => $item) {
+            $typedArray[$key] = $item;
         }
         return $typedArray;
     }
@@ -96,8 +96,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     public static function ofObject(array $items = []): self
     {
         $typedArray = new self(self::TYPES['object']);
-        foreach ($items as $key => $value) {
-            $typedArray[$key] = $value;
+        foreach ($items as $key => $item) {
+            $typedArray[$key] = $item;
         }
         return $typedArray;
     }
@@ -111,8 +111,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     public static function ofResource(array $items = []): self
     {
         $typedArray = new self(self::TYPES['resource']);
-        foreach ($items as $key => $value) {
-            $typedArray[$key] = $value;
+        foreach ($items as $key => $item) {
+            $typedArray[$key] = $item;
         }
         return $typedArray;
     }
@@ -126,8 +126,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     public static function ofString(array $items = []): self
     {
         $typedArray = new self(self::TYPES['string']);
-        foreach ($items as $key => $value) {
-            $typedArray[$key] = $value;
+        foreach ($items as $key => $item) {
+            $typedArray[$key] = $item;
         }
         return $typedArray;
     }
@@ -144,8 +144,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     {
         $typedArray = new self($class);
         $typedArray->classKind = $typedArray->determineClassKind();
-        foreach ($items as $key => $value) {
-            $typedArray[$key] = $value;
+        foreach ($items as $key => $item) {
+            $typedArray[$key] = $item;
         }
         return $typedArray;
     }
@@ -189,34 +189,34 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
 
     /**
      * @param int|string|null $key
-     * @param T               $value
+     * @param T               $item
      * @see https://www.php.net/manual/en/arrayaccess.offsetset.php
      */
-    public function offsetSet($key, $value): void
+    public function offsetSet($key, $item): void
     {
         if (
-            ($this->type == self::TYPES['array'] && !\is_array($value))
-            || ($this->type == self::TYPES['float'] && !\is_float($value))
-            || ($this->type == self::TYPES['int'] && !\is_int($value))
-            || ($this->type == self::TYPES['object'] && !\is_object($value))
-            || ($this->type == self::TYPES['resource'] && !\is_resource($value))
-            || ($this->type == self::TYPES['string'] && !\is_string($value))
-            || ($this->classKind == self::CLASS_KINDS['class'] && !\is_a($value, $this->type))
-            || ($this->classKind == self::CLASS_KINDS['interface'] && !\is_subclass_of($value, $this->type))
+            ($this->type == self::TYPES['array'] && !\is_array($item))
+            || ($this->type == self::TYPES['float'] && !\is_float($item))
+            || ($this->type == self::TYPES['int'] && !\is_int($item))
+            || ($this->type == self::TYPES['object'] && !\is_object($item))
+            || ($this->type == self::TYPES['resource'] && !\is_resource($item))
+            || ($this->type == self::TYPES['string'] && !\is_string($item))
+            || ($this->classKind == self::CLASS_KINDS['class'] && !\is_a($item, $this->type))
+            || ($this->classKind == self::CLASS_KINDS['interface'] && !\is_subclass_of($item, $this->type))
             || (
                 $this->classKind == self::CLASS_KINDS['trait']
-                && !\array_key_exists($this->type, class_uses_recursive($value))
+                && !\array_key_exists($this->type, class_uses_recursive($item))
             )
         ) {
-            $givenType = \is_object($value) ? \get_class($value) : \gettype($value);
+            $givenType = \is_object($item) ? \get_class($item) : \gettype($item);
             throw new InvalidArgumentException(
                 \sprintf('The type of items in the typed array must be "%s", "%s" given.', $this->type, $givenType)
             );
         }
         if (\is_null($key)) {
-            $this->items[] = $value;
+            $this->items[] = $item;
         } else {
-            $this->items[$key] = $value;
+            $this->items[$key] = $item;
         }
     }
 

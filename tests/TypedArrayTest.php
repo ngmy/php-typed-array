@@ -89,8 +89,8 @@ class TypedArrayTest extends TestCase
         $typedArray = $this->createInstance($type);
 
         // Test setting the value without the offset
-        foreach ($items as $value) {
-            $typedArray[] = $value;
+        foreach ($items as $item) {
+            $typedArray[] = $item;
         }
 
         // Test calling the __clone() method
@@ -98,8 +98,8 @@ class TypedArrayTest extends TestCase
         $this->assertEquals($typedArray, $clonedTypedArray);
 
         // Test getting the value
-        foreach ($typedArray as $key => $value) {
-            $this->assertSame($items[$key], $value);
+        foreach ($typedArray as $key => $item) {
+            $this->assertSame($items[$key], $item);
             $this->assertSame($items[$key], $typedArray[$key]);
         }
 
@@ -113,7 +113,7 @@ class TypedArrayTest extends TestCase
         $this->assertSame($items, \iterator_to_array($typedArray));
 
         // Test calling the unset(), isset() and empty() functions
-        foreach ($typedArray as $key => $value) {
+        foreach ($typedArray as $key => $item) {
             unset($typedArray[$key]);
             $this->assertFalse(isset($typedArray[$key]));
             $this->assertTrue(empty($typedArray[$key]));
@@ -123,8 +123,8 @@ class TypedArrayTest extends TestCase
         $this->assertTrue($typedArray->isEmpty());
 
         // Test setting the value with the offset
-        foreach ($items as $key => $value) {
-            $typedArray[$key] = $value;
+        foreach ($items as $key => $item) {
+            $typedArray[$key] = $item;
         }
         $this->assertEquals($clonedTypedArray, $typedArray);
 
