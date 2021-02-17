@@ -94,11 +94,24 @@ class ClassArrayTest extends TypedArrayTest
     }
 
     /**
+     * @doesNotPerformAssertions
+     */
+    public function testForPhpStan(): void
+    {
+        $typedArray = TypedArray::ofClass(\DateTimeInterface::class);
+        $typedArray[] = new \DateTime();
+        $typedArray[] = new \DateTimeImmutable();
+        foreach ($typedArray as $dateTime) {
+            $dateTime->format('Y-m-d H:i:s');
+        }
+    }
+
+    /**
      * @template T
      * @psalm-param class-string<T> $type
-     * @param class-string<T>               $type
-     * @param array<int|string, mixed>|null $items
-     * @return TypedArray<class-string<T>>
+     * @param class-string<T>           $type
+     * @param array<int|string, T>|null $items
+     * @return TypedArray<T>
      */
     protected function createInstance(string $type, array $items = null): TypedArray
     {

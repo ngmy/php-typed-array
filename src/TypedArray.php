@@ -137,8 +137,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      *
      * @template TClass
      * @psalm-param class-string<TClass> $class
-     * @param array<int|string, class-string<TClass>> $items
-     * @return TypedArray<class-string<TClass>>
+     * @param array<int|string, TClass> $items
+     * @return TypedArray<TClass>
      */
     public static function ofClass(string $class, array $items = []): self
     {
