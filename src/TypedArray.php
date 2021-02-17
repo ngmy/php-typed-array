@@ -203,7 +203,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
             || ($this->type == self::TYPES['string'] && !\is_string($value))
             || ($this->classKind == self::CLASS_KINDS['class'] && !\is_a($value, $this->type))
             || ($this->classKind == self::CLASS_KINDS['interface'] && !\is_subclass_of($value, $this->type))
-            || ($this->classKind == self::CLASS_KINDS['trait'] && !class_uses_recursive($value))
+            || (
+                $this->classKind == self::CLASS_KINDS['trait']
+                && !\array_key_exists($this->type, class_uses_recursive($value))
+            )
         ) {
             $givenType = \is_object($value) ? \get_class($value) : \gettype($value);
             throw new InvalidArgumentException(

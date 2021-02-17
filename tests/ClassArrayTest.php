@@ -60,6 +60,11 @@ class ClassArrayTest extends TypedArrayTest
                 new InvalidArgumentException(),
             ],
             [
+                Data\TraitB::class,
+                [new Data\ClassC(), new Data\ClassC()],
+                new InvalidArgumentException(),
+            ],
+            [
                 Data\AbstractClassA::class,
                 [new Data\ClassE(), new Data\ClassE()],
             ],
