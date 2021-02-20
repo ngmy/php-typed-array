@@ -26,6 +26,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
 {
     private const TYPES = [
         'array'    => 'array',
+        'bool'     => 'bool',
         'float'    => 'float',
         'int'      => 'int',
         'object'   => 'object',
@@ -57,6 +58,21 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     public static function ofArray(array $items = []): self
     {
         $typedArray = new self(self::TYPES['array']);
+        foreach ($items as $key => $item) {
+            $typedArray[$key] = $item;
+        }
+        return $typedArray;
+    }
+
+    /**
+     * Create a new instance of a typed array of the bool type.
+     *
+     * @param array<int|string, bool> $items
+     * @return TypedArray<bool>
+     */
+    public static function ofBool(array $items = []): self
+    {
+        $typedArray = new self(self::TYPES['bool']);
         foreach ($items as $key => $item) {
             $typedArray[$key] = $item;
         }
@@ -210,6 +226,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     {
         if (
             ($this->type == self::TYPES['array'] && !\is_array($item))
+            || ($this->type == self::TYPES['bool'] && !\is_bool($item))
             || ($this->type == self::TYPES['float'] && !\is_float($item))
             || ($this->type == self::TYPES['int'] && !\is_int($item))
             || ($this->type == self::TYPES['object'] && !\is_object($item))

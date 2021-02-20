@@ -10,7 +10,7 @@
 
 PHP Typed Array is the typed array for PHP.
 
-- Can create the typed array of the array, float, int, object, resource, or string type, or the specified class, interface, or trait type
+- Can create the typed array of the array, bool, float, int, object, resource, or string type, or the specified class, interface, or trait type
 - Implements the `ArrayAccess`, `Countable`, and `IteratorAggregate` interface
 - Supports the static analysis like PHPStan
 
@@ -18,35 +18,32 @@ PHP Typed Array is the typed array for PHP.
 // Create a new instance of a typed array of the int type
 $intArray = Ngmy\TypedArray\TypedArray::ofInt();
 
-$intArray[] = 1; // Good
+$intArray[] = 1;      // Good
 // $intArray[] = '2'; // No good. The InvalidArgumentException is thrown
 
 // Create a new instance of a typed array of the DateTimeInterface
-$dateTimeArray = Ngmy\TypedArray\TypedArray::ofClass(DateTimeInterface::class);
+$dateTimeInterfaceArray = Ngmy\TypedArray\TypedArray::ofClass(DateTimeInterface::class);
 
-$dateTimeArray[] = new DateTime(); // Good
-$dateTimeArray[] = new DateTimeImmutable(); // Good
-// $dateTimeArray[] = new stdClass(); // No good. The InvalidArgumentException is thrown
+$dateTimeInterfaceArray[] = new DateTime();          // Good
+$dateTimeInterfaceArray[] = new DateTimeImmutable(); // Good
+// $dateTimeInterfaceArray[] = new stdClass();       // No good. The InvalidArgumentException is thrown
 
-foreach ($dateTimeArray as $dateTime) {
-    var_dump($dateTime->format('Y-m-d H:i:s'));
+foreach ($dateTimeInterfaceArray as $dateTime) {
+    echo $dateTime->format('Y-m-d H:i:s') . PHP_EOL;
 }
 
 // Determine if the typed array is empty or not
-var_dump($dateTimeArray->isEmpty()); // bool(false)
+echo var_export($dateTimeInterfaceArray->isEmpty(), true) . PHP_EOL; // false
 
 // Get the typed array of items as a plain array
-var_dump($dateTimeArray->toArray($dateTimeArray));
-// array(2) {
-//   [0] =>
-//   class DateTime#53 (3) {
-//     ...
-//   }
-//   [1] =>
-//   class DateTimeImmutable#54 (3) {
-//     ...
-//   }
-// }
+print_r($dateTimeInterfaceArray->toArray());
+// Array
+// (
+//     [0] => DateTime Object
+//         ...
+//     [1] => DateTimeImmutable Object
+//         ...
+// )
 ```
 
 ## Requirements

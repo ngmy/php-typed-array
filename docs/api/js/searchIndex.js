@@ -11,6 +11,11 @@ Search.appendIndex(
             "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020array\u0020type.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofArray"
         },                {
+            "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofBool\u0028\u0029",
+            "name": "ofBool",
+            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020bool\u0020type.",
+            "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofBool"
+        },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofFloat\u0028\u0029",
             "name": "ofFloat",
             "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020float\u0020type.",

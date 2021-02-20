@@ -26,6 +26,15 @@ class TypedArrayTest extends TestCase
                 new InvalidArgumentException(),
             ],
             [
+                'bool',
+                [true, false],
+            ],
+            [
+                'bool',
+                [0, 1],
+                new InvalidArgumentException(),
+            ],
+            [
                 'float',
                 [0.0, 0.1],
             ],
