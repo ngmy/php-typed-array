@@ -50,7 +50,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     private $items = [];
 
     /**
-     * Create a new instance of a typed array of the array type.
+     * Creates a new instance of a typed array of the array type.
      *
      * @param array<int|string, array<int|string, mixed>> $items
      * @return TypedArray<array<int|string, mixed>>
@@ -65,7 +65,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Create a new instance of a typed array of the bool type.
+     * Creates a new instance of a typed array of the bool type.
      *
      * @param array<int|string, bool> $items
      * @return TypedArray<bool>
@@ -80,7 +80,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Create a new instance of a typed array of the float type.
+     * Creates a new instance of a typed array of the float type.
      *
      * @param array<int|string, float> $items
      * @return TypedArray<float>
@@ -95,7 +95,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Create a new instance of a typed array of the int type.
+     * Creates a new instance of a typed array of the int type.
      *
      * @param array<int|string, int> $items
      * @return TypedArray<int>
@@ -110,7 +110,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Create a new instance of a typed array of the object type.
+     * Creates a new instance of a typed array of the object type.
      *
      * @param array<int|string, object> $items
      * @return TypedArray<object>
@@ -125,7 +125,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Create a new instance of a typed array of the resource type.
+     * Creates a new instance of a typed array of the resource type.
      *
      * @param array<int|string, resource> $items
      * @return TypedArray<resource>
@@ -140,7 +140,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Create a new instance of a typed array of the string type.
+     * Creates a new instance of a typed array of the string type.
      *
      * @param array<int|string, string> $items
      * @return TypedArray<string>
@@ -155,7 +155,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Create a new instance of a typed array of the specified class type.
+     * Creates a new instance of a typed array of the specified class type.
      *
      * @param array<int|string, mixed> $items
      * @return TypedArray<mixed>
@@ -183,7 +183,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Create a new instance of a typed array of the class type that implements the specified interface.
+     * Creates a new instance of a typed array of the class type that implements the specified interface.
      *
      * @param array<int|string, mixed> $items
      * @return TypedArray<mixed>
@@ -211,7 +211,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Create a new instance of a typed array of the class type that uses the specified trait.
+     * Creates a new instance of a typed array of the class type that uses the specified trait.
      *
      * @param array<int|string, mixed> $items
      * @return TypedArray<mixed>
@@ -237,7 +237,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Determine if the typed array is empty or not.
+     * Determines if the typed array is empty or not.
      */
     public function isEmpty(): bool
     {
@@ -245,7 +245,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Get the typed array of items as a plain array.
+     * Gets the typed array of items as a plain array.
      *
      * @return array<int|string, mixed>
      *

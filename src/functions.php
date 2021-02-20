@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Ngmy\TypedArray;
 
 /**
- * Return all traits used by a class, its parent classes and trait of their traits.
+ * Returns all traits used by a class, its parent classes and trait of their traits.
  *
  * @param object|string $class
  * @return array<string, string>
@@ -31,7 +31,7 @@ function class_uses_recursive($class): array
 }
 
 /**
- * Return all traits used by a trait and its traits.
+ * Returns all traits used by a trait and its traits.
  *
  * @return array<string, string>
  * @internal
