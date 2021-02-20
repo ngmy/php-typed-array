@@ -8,62 +8,62 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofArray\u0028\u0029",
             "name": "ofArray",
-            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020array\u0020type.",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020array\u0020type.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofArray"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofBool\u0028\u0029",
             "name": "ofBool",
-            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020bool\u0020type.",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020bool\u0020type.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofBool"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofFloat\u0028\u0029",
             "name": "ofFloat",
-            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020float\u0020type.",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020float\u0020type.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofFloat"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofInt\u0028\u0029",
             "name": "ofInt",
-            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020int\u0020type.",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020int\u0020type.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofInt"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofObject\u0028\u0029",
             "name": "ofObject",
-            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020object\u0020type.",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020object\u0020type.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofObject"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofResource\u0028\u0029",
             "name": "ofResource",
-            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020resource\u0020type.",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020resource\u0020type.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofResource"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofString\u0028\u0029",
             "name": "ofString",
-            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020string\u0020type.",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020string\u0020type.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofString"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofClass\u0028\u0029",
             "name": "ofClass",
-            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020specified\u0020class\u0020type.",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020specified\u0020class\u0020type.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofClass"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofInterface\u0028\u0029",
             "name": "ofInterface",
-            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020class\u0020type\u0020that\u0020implements\u0020the\u0020specified\u0020interface.",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020class\u0020type\u0020that\u0020implements\u0020the\u0020specified\u0020interface.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofInterface"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofTrait\u0028\u0029",
             "name": "ofTrait",
-            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020class\u0020type\u0020that\u0020uses\u0020the\u0020specified\u0020trait.",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020class\u0020type\u0020that\u0020uses\u0020the\u0020specified\u0020trait.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofTrait"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AisEmpty\u0028\u0029",
             "name": "isEmpty",
-            "summary": "Determine\u0020if\u0020the\u0020typed\u0020array\u0020is\u0020empty\u0020or\u0020not.",
+            "summary": "Determines\u0020if\u0020the\u0020typed\u0020array\u0020is\u0020empty\u0020or\u0020not.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_isEmpty"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AtoArray\u0028\u0029",
             "name": "toArray",
-            "summary": "Get\u0020the\u0020typed\u0020array\u0020of\u0020items\u0020as\u0020a\u0020plain\u0020array.",
+            "summary": "Gets\u0020the\u0020typed\u0020array\u0020of\u0020items\u0020as\u0020a\u0020plain\u0020array.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_toArray"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AoffsetExists\u0028\u0029",
