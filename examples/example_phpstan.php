@@ -9,6 +9,15 @@ $arrayArray[] = [];   // Good
 $arrayArray[] = '';   // No good
 $arrayArray[] = null; // No good
 
+$boolArray = Ngmy\TypedArray\TypedArray::ofBool();
+$boolArray[] = true;  // Good
+$boolArray[] = false; // Good
+$boolArray[] = 1;     // No good
+$boolArray[] = 0;     // No good
+$boolArray[] = '';    // No good
+$boolArray[] = [];    // No good
+$boolArray[] = null;  // No good
+
 $floatArray = Ngmy\TypedArray\TypedArray::ofFloat();
 $floatArray[] = 0.0;   // Good
 $floatArray[] = '0.0'; // No good

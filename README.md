@@ -10,7 +10,7 @@
 
 PHP Typed Array is the typed array for PHP.
 
-- Can create the typed array of the array, float, int, object, resource, or string type, or the specified class, interface, or trait type
+- Can create the typed array of the array, bool, float, int, object, resource, or string type, or the specified class, interface, or trait type
 - Implements the `ArrayAccess`, `Countable`, and `IteratorAggregate` interface
 - Supports the static analysis like PHPStan
 
