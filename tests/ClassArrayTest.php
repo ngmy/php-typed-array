@@ -94,19 +94,6 @@ class ClassArrayTest extends TypedArrayTest
     }
 
     /**
-     * @doesNotPerformAssertions
-     */
-    public function testForPhpStan(): void
-    {
-        $typedArray = TypedArray::ofClass(\DateTimeInterface::class);
-        $typedArray[] = new \DateTime();
-        $typedArray[] = new \DateTimeImmutable();
-        foreach ($typedArray as $dateTime) {
-            $dateTime->format('Y-m-d H:i:s');
-        }
-    }
-
-    /**
      * @param array<int|string, mixed>|null $items
      * @return TypedArray<mixed>
      *
