@@ -82,11 +82,11 @@ class ClassArrayTest extends TypedArrayTest
     }
 
     /**
-     * @template T
-     * @psalm-param class-string<T> $type
-     * @param class-string<T>               $type
      * @param array<int|string, mixed>|null $items
      * @dataProvider dataProvider
+     *
+     * @phpstan-template T
+     * @phpstan-param class-string<T> $type
      */
     public function test(string $type, ?array $items, Exception $exception = null): void
     {
@@ -107,11 +107,12 @@ class ClassArrayTest extends TypedArrayTest
     }
 
     /**
-     * @template T
-     * @psalm-param class-string<T> $type
-     * @param class-string<T>           $type
-     * @param array<int|string, T>|null $items
-     * @return TypedArray<T>
+     * @param array<int|string, mixed>|null $items
+     * @return TypedArray<mixed>
+     *
+     * @phpstan-template T
+     * @phpstan-param class-string<T> $type
+     * @phpstan-return TypedArray<T>
      */
     protected function createInstance(string $type, array $items = null): TypedArray
     {

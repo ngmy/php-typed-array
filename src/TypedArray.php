@@ -12,12 +12,15 @@ use IteratorAggregate;
 use Traversable;
 
 /**
- * @template T
- * @implements ArrayAccess<int|string, T>
- * @implements IteratorAggregate<int|string, T>
+ * @implements ArrayAccess<int|string, mixed>
+ * @implements IteratorAggregate<int|string, mixed>
  * @see https://www.php.net/manual/en/class.arrayaccess.php
  * @see https://www.php.net/manual/en/class.countable.php
  * @see https://www.php.net/manual/en/class.iteratoraggregate.php
+ *
+ * @phpstan-template T
+ * @phpstan-implements ArrayAccess<int|string, T>
+ * @phpstan-implements IteratorAggregate<int|string, T>
  */
 class TypedArray implements ArrayAccess, Countable, IteratorAggregate
 {
@@ -39,7 +42,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     private $type;
     /** @var string|null */
     private $classKind;
-    /** @var array<int|string, T> */
+    /**
+     * @var array<int|string, mixed>
+     * @phpstan-var array<int|string, T>
+     */
     private $items = [];
 
     /**
@@ -135,10 +141,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * Create a new instance of a typed array of the specified class, interface, or trait type.
      *
-     * @template TClass
-     * @psalm-param class-string<TClass> $class
-     * @param array<int|string, TClass> $items
-     * @return TypedArray<TClass>
+     * @param array<int|string, mixed> $items
+     * @return TypedArray<mixed>
+     *
+     * @phpstan-template TClass
+     * @phpstan-param class-string<TClass> $class
+     * @phpstan-return TypedArray<TClass>
      */
     public static function ofClass(string $class, array $items = []): self
     {
@@ -161,7 +169,9 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * Get the typed array of items as a plain array.
      *
-     * @return array<int|string, T>
+     * @return array<int|string, mixed>
+     *
+     * @phpstan-return array<int|string, T>
      */
     public function toArray(): array
     {
@@ -179,8 +189,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
 
     /**
      * @param int|string|null $key
-     * @return T|null
+     * @return mixed|null
      * @see https://www.php.net/manual/en/arrayaccess.offsetget.php
+     *
+     * @phpstan-return T|null
      */
     public function offsetGet($key)
     {
@@ -189,8 +201,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
 
     /**
      * @param int|string|null $key
-     * @param T               $item
+     * @param mixed           $item
      * @see https://www.php.net/manual/en/arrayaccess.offsetset.php
+     *
+     * @phpstan-param T $item
      */
     public function offsetSet($key, $item): void
     {
@@ -238,8 +252,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * @return Traversable<int|string, T>
+     * @return Traversable<int|string, mixed>
      * @see https://www.php.net/manual/en/iteratoraggregate.getiterator.php
+     *
+     * @phpstan-return Traversable<int|string, T>
      */
     public function getIterator(): Traversable
     {

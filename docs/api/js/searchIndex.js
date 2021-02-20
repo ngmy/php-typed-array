@@ -1,16 +1,6 @@
 Search.appendIndex(
     [
                 {
-            "fqsen": "\\Ngmy\\TypedArray\\class_uses_recursive\u0028\u0029",
-            "name": "class_uses_recursive",
-            "summary": "Return\u0020all\u0020traits\u0020used\u0020by\u0020a\u0020class,\u0020its\u0020parent\u0020classes\u0020and\u0020trait\u0020of\u0020their\u0020traits.",
-            "url": "namespaces/ngmy-typedarray.html#function_class_uses_recursive"
-        },                {
-            "fqsen": "\\Ngmy\\TypedArray\\trait_uses_recursive\u0028\u0029",
-            "name": "trait_uses_recursive",
-            "summary": "Return\u0020all\u0020traits\u0020used\u0020by\u0020a\u0020trait\u0020and\u0020its\u0020traits.",
-            "url": "namespaces/ngmy-typedarray.html#function_trait_uses_recursive"
-        },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray",
             "name": "TypedArray",
             "summary": "",
