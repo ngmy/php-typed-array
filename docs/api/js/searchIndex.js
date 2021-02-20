@@ -43,8 +43,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofClass\u0028\u0029",
             "name": "ofClass",
-            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020specified\u0020class,\u0020interface,\u0020or\u0020trait\u0020type.",
+            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020specified\u0020class\u0020type.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofClass"
+        },                {
+            "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofInterface\u0028\u0029",
+            "name": "ofInterface",
+            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020class\u0020type\u0020that\u0020implements\u0020the\u0020specified\u0020interface.",
+            "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofInterface"
+        },                {
+            "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AofTrait\u0028\u0029",
+            "name": "ofTrait",
+            "summary": "Create\u0020a\u0020new\u0020instance\u0020of\u0020a\u0020typed\u0020array\u0020of\u0020the\u0020class\u0020type\u0020that\u0020uses\u0020the\u0020specified\u0020trait.",
+            "url": "classes/Ngmy-TypedArray-TypedArray.html#method_ofTrait"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AisEmpty\u0028\u0029",
             "name": "isEmpty",
@@ -90,11 +100,6 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method___construct"
-        },                {
-            "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AdetermineClassKind\u0028\u0029",
-            "name": "determineClassKind",
-            "summary": "",
-            "url": "classes/Ngmy-TypedArray-TypedArray.html#method_determineClassKind"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003ATYPES",
             "name": "TYPES",

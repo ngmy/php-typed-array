@@ -10,8 +10,8 @@
 
 PHP Typed Array is the typed array for PHP.
 
-- Can create the typed array of the array, bool, float, int, object, resource, or string type, or the specified class, interface, or trait type
-- Implements the `ArrayAccess`, `Countable`, and `IteratorAggregate` interface
+- Can create the typed array of the array, bool, float, int, object, resource, or string type, or the specified class type, or the class type that implements the specified interface, or the class type that uses the specified trait
+- Implements the `ArrayAccess`, `Countable`, and `IteratorAggregate` interfaces
 - Supports the static analysis like PHPStan
 
 ```php
@@ -19,14 +19,14 @@ PHP Typed Array is the typed array for PHP.
 $intArray = Ngmy\TypedArray\TypedArray::ofInt();
 
 $intArray[] = 1;      // Good
-// $intArray[] = '2'; // No good. The InvalidArgumentException is thrown
+// $intArray[] = '2'; // No good. The InvalidArgumentException exception is thrown
 
-// Create a new instance of a typed array of the DateTimeInterface
-$dateTimeInterfaceArray = Ngmy\TypedArray\TypedArray::ofClass(DateTimeInterface::class);
+// Create a new instance of a typed array of the class type that implements the DateTimeInterface interface
+$dateTimeInterfaceArray = Ngmy\TypedArray\TypedArray::ofInterface(DateTimeInterface::class);
 
 $dateTimeInterfaceArray[] = new DateTime();          // Good
 $dateTimeInterfaceArray[] = new DateTimeImmutable(); // Good
-// $dateTimeInterfaceArray[] = new stdClass();       // No good. The InvalidArgumentException is thrown
+// $dateTimeInterfaceArray[] = new stdClass();       // No good. The InvalidArgumentException exception is thrown
 
 foreach ($dateTimeInterfaceArray as $dateTime) {
     echo $dateTime->format('Y-m-d H:i:s') . PHP_EOL;

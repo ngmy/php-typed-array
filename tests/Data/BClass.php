@@ -4,6 +4,6 @@ declare(strict_types=1);
 
 namespace Ngmy\TypedArray\Tests\Data;
 
-interface InterfaceA
+class BClass implements AInterface
 {
 }

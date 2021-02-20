@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Ngmy\TypedArray\Tests\Data;
 
-trait TraitB
+class FClass extends AAbstractClass
 {
-    use TraitA;
+    use BTrait;
 }

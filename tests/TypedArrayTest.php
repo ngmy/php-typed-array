@@ -54,7 +54,7 @@ class TypedArrayTest extends TestCase
             ],
             [
                 'object',
-                [new Data\ClassA(), new Data\ClassB()],
+                [new Data\AClass(), new Data\BClass()],
             ],
             [
                 'object',
