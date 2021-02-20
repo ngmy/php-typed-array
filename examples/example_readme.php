@@ -8,14 +8,14 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $intArray = Ngmy\TypedArray\TypedArray::ofInt();
 
 $intArray[] = 1;      // Good
-// $intArray[] = '2'; // No good. The InvalidArgumentException is thrown
+// $intArray[] = '2'; // No good. The InvalidArgumentException exception is thrown
 
-// Create a new instance of a typed array of the DateTimeInterface
-$dateTimeInterfaceArray = Ngmy\TypedArray\TypedArray::ofClass(DateTimeInterface::class);
+// Create a new instance of a typed array of the class type that implements the DateTimeInterface interface
+$dateTimeInterfaceArray = Ngmy\TypedArray\TypedArray::ofInterface(DateTimeInterface::class);
 
 $dateTimeInterfaceArray[] = new DateTime();          // Good
 $dateTimeInterfaceArray[] = new DateTimeImmutable(); // Good
-// $dateTimeInterfaceArray[] = new stdClass();       // No good. The InvalidArgumentException is thrown
+// $dateTimeInterfaceArray[] = new stdClass();       // No good. The InvalidArgumentException exception is thrown
 
 foreach ($dateTimeInterfaceArray as $dateTime) {
     echo $dateTime->format('Y-m-d H:i:s') . PHP_EOL;

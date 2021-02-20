@@ -155,7 +155,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * Create a new instance of a typed array of the specified class, interface, or trait type.
+     * Create a new instance of a typed array of the specified class type.
      *
      * @param array<int|string, mixed> $items
      * @return TypedArray<mixed>
@@ -167,7 +167,69 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     public static function ofClass(string $class, array $items = []): self
     {
         $typedArray = new self($class);
-        $typedArray->classKind = $typedArray->determineClassKind();
+        if (!\class_exists($typedArray->type)) {
+            throw new InvalidArgumentException(
+                \sprintf(
+                    'The type of the typed array must be the name of an existing class, "%s" given.',
+                    $typedArray->type
+                )
+            );
+        }
+        $typedArray->classKind = self::CLASS_KINDS['class'];
+        foreach ($items as $key => $item) {
+            $typedArray[$key] = $item;
+        }
+        return $typedArray;
+    }
+
+    /**
+     * Create a new instance of a typed array of the class type that implements the specified interface.
+     *
+     * @param array<int|string, mixed> $items
+     * @return TypedArray<mixed>
+     *
+     * @phpstan-template TClass
+     * @phpstan-param class-string<TClass> $class
+     * @phpstan-return TypedArray<TClass>
+     */
+    public static function ofInterface(string $class, array $items = []): self
+    {
+        $typedArray = new self($class);
+        if (!\interface_exists($typedArray->type)) {
+            throw new InvalidArgumentException(
+                \sprintf(
+                    'The type of the typed array must be the name of an existing interface, "%s" given.',
+                    $typedArray->type
+                )
+            );
+        }
+        $typedArray->classKind = self::CLASS_KINDS['interface'];
+        foreach ($items as $key => $item) {
+            $typedArray[$key] = $item;
+        }
+        return $typedArray;
+    }
+
+    /**
+     * Create a new instance of a typed array of the class type that uses the specified trait.
+     *
+     * @param array<int|string, mixed> $items
+     * @return TypedArray<mixed>
+     *
+     * @phpstan-param class-string $trait
+     */
+    public static function ofTrait(string $trait, array $items = []): self
+    {
+        $typedArray = new self($trait);
+        if (!\trait_exists($typedArray->type)) {
+            throw new InvalidArgumentException(
+                \sprintf(
+                    'The type of the typed array must be the name of an existing trait, "%s" given.',
+                    $typedArray->type
+                )
+            );
+        }
+        $typedArray->classKind = self::CLASS_KINDS['trait'];
         foreach ($items as $key => $item) {
             $typedArray[$key] = $item;
         }
@@ -282,24 +344,5 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     private function __construct(string $type)
     {
         $this->type = $type;
-    }
-
-    private function determineClassKind(): string
-    {
-        if (\class_exists($this->type)) {
-            return self::CLASS_KINDS['class'];
-        }
-        if (\interface_exists($this->type)) {
-            return self::CLASS_KINDS['interface'];
-        }
-        if (\trait_exists($this->type)) {
-            return self::CLASS_KINDS['trait'];
-        }
-        throw new InvalidArgumentException(
-            \sprintf(
-                'The type of the typed array must be the name of an existing class, interface or trait, "%s" given.',
-                $this->type
-            )
-        );
     }
 }

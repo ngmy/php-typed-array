@@ -30,7 +30,7 @@ $intArray[] = null; // No good
 
 $objectArray = Ngmy\TypedArray\TypedArray::ofObject();
 $objectArray[] = new stdClass(); // Good
-$objectArray[] = new class() {}; // Good
+$objectArray[] = new class {};   // Good
 $objectArray[] = '';             // No good
 $objectArray[] = null;           // No good
 
@@ -44,14 +44,13 @@ $dateTimeArray[] = new DateTime();          // Good
 $dateTimeArray[] = new DateTimeImmutable(); // No good
 $dateTimeArray[] = null;                    // No good
 
-$dateTimeInterfaceArray = Ngmy\TypedArray\TypedArray::ofClass(DateTimeInterface::class);
+$dateTimeInterfaceArray = Ngmy\TypedArray\TypedArray::ofInterface(DateTimeInterface::class);
 $dateTimeInterfaceArray[] = new DateTime();          // Good
 $dateTimeInterfaceArray[] = new DateTimeImmutable(); // Good
 $dateTimeInterfaceArray[] = new stdClass();          // No good
 $dateTimeInterfaceArray[] = null;                    // No good
 
-$traitAArray = Ngmy\TypedArray\TypedArray::ofClass(Ngmy\TypedArray\Tests\Data\TraitA::class);
-$traitAArray[] = new Ngmy\TypedArray\Tests\Data\ClassC(); // Good
-$traitAArray[] = new Ngmy\TypedArray\Tests\Data\ClassA(); // No good
-$traitAArray[] = null;                                    // No good
-
+$aTraitArray = Ngmy\TypedArray\TypedArray::ofTrait(Ngmy\TypedArray\Tests\Data\ATrait::class);
+$aTraitArray[] = new Ngmy\TypedArray\Tests\Data\CClass(); // Good
+$aTraitArray[] = new Ngmy\TypedArray\Tests\Data\AClass(); // Good. This is the false negative
+$aTraitArray[] = null;                                    // Good. This is the false negative
