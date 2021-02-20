@@ -51,6 +51,8 @@ class FunctionsTest extends TestCase
      * @param object|string         $class
      * @param array<string, string> $expected
      * @dataProvider traitUsesRecursiveProvider
+     *
+     * @phpstan-param class-string $class
      */
     public function testClassUsesRecursive($class, array $expected): void
     {
@@ -81,6 +83,8 @@ class FunctionsTest extends TestCase
     /**
      * @param array<string, string> $expected
      * @dataProvider traitUsesRecursiveProvider
+     *
+     * @phpstan-param class-string $trait
      */
     public function testTraitUsesRecursive(string $trait, array $expected): void
     {
