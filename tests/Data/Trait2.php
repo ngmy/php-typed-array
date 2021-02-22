@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Ngmy\TypedArray\Tests\Data;
 
-trait ATrait
+trait Trait2
 {
+    use Trait1;
 }

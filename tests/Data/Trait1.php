@@ -4,6 +4,6 @@ declare(strict_types=1);
 
 namespace Ngmy\TypedArray\Tests\Data;
 
-interface AInterface
+trait Trait1
 {
 }

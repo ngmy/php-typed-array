@@ -17,39 +17,39 @@ class ClassArrayTest extends TypedArrayTest
     {
         return [
             [
-                Data\AClass::class,
-                [new Data\AClass(), new Data\AClass()],
+                Data\Class1::class,
+                [new Data\Class1(), new Data\Class1()],
             ],
             [
-                Data\AClass::class,
-                [new Data\DClass(), new Data\DClass()],
+                Data\Class1::class,
+                [new Data\Class4(), new Data\Class4()],
             ],
             [
-                Data\AClass::class,
-                [new Data\AClass(), new Data\DClass()],
+                Data\Class1::class,
+                [new Data\Class1(), new Data\Class4()],
             ],
             [
-                Data\AClass::class,
-                [new Data\BClass(), new Data\BClass()],
+                Data\Class1::class,
+                [new Data\Class2(), new Data\Class2()],
                 new InvalidArgumentException(),
             ],
             [
-                Data\AAbstractClass::class,
-                [new Data\EClass(), new Data\EClass()],
+                Data\AbstractClass1::class,
+                [new Data\Class5(), new Data\Class5()],
             ],
             [
-                Data\AAbstractClass::class,
-                [new Data\AClass(), new Data\AClass()],
+                Data\AbstractClass1::class,
+                [new Data\Class1(), new Data\Class1()],
                 new InvalidArgumentException(),
             ],
             [
-                Data\AInterface::class,
-                [new Data\BClass(), new Data\BClass()],
+                Data\Interface1::class,
+                [new Data\Class2(), new Data\Class2()],
                 new InvalidArgumentException(),
             ],
             [
-                Data\ATrait::class,
-                [new Data\CClass(), new Data\CClass()],
+                Data\Trait1::class,
+                [new Data\Class3(), new Data\Class3()],
                 new InvalidArgumentException(),
             ],
             [

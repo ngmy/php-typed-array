@@ -17,27 +17,27 @@ class InterfaceArrayTest extends TypedArrayTest
     {
         return [
             [
-                Data\AClass::class,
-                [new Data\AClass(), new Data\AClass()],
+                Data\Class1::class,
+                [new Data\Class1(), new Data\Class1()],
                 new InvalidArgumentException(),
             ],
             [
-                Data\AAbstractClass::class,
-                [new Data\EClass(), new Data\EClass()],
+                Data\AbstractClass1::class,
+                [new Data\Class5(), new Data\Class5()],
                 new InvalidArgumentException(),
             ],
             [
-                Data\AInterface::class,
-                [new Data\BClass(), new Data\BClass()],
+                Data\Interface1::class,
+                [new Data\Class2(), new Data\Class2()],
             ],
             [
-                Data\AInterface::class,
-                [new Data\AClass(), new Data\AClass()],
+                Data\Interface1::class,
+                [new Data\Class1(), new Data\Class1()],
                 new InvalidArgumentException(),
             ],
             [
-                Data\ATrait::class,
-                [new Data\CClass(), new Data\CClass()],
+                Data\Trait1::class,
+                [new Data\Class3(), new Data\Class3()],
                 new InvalidArgumentException(),
             ],
             [
