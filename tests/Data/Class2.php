@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Ngmy\TypedArray\Tests\Data;
 
-trait BTrait
+class Class2 implements Interface1
 {
-    use ATrait;
 }

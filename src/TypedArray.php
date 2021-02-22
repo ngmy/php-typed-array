@@ -157,8 +157,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * Creates a new instance of a typed array of the specified class type.
      *
-     * @param array<int|string, mixed> $items
-     * @return TypedArray<mixed>
+     * @param array<int|string, object> $items
+     * @return TypedArray<object>
      *
      * @phpstan-template TClass
      * @phpstan-param class-string<TClass> $class
@@ -185,8 +185,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * Creates a new instance of a typed array of the class type that implements the specified interface.
      *
-     * @param array<int|string, mixed> $items
-     * @return TypedArray<mixed>
+     * @param array<int|string, object> $items
+     * @return TypedArray<object>
      *
      * @phpstan-template TClass
      * @phpstan-param class-string<TClass> $class
@@ -213,8 +213,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * Creates a new instance of a typed array of the class type that uses the specified trait.
      *
-     * @param array<int|string, mixed> $items
-     * @return TypedArray<mixed>
+     * @param array<int|string, object> $items
+     * @return TypedArray<object>
      *
      * @phpstan-param class-string $trait
      */

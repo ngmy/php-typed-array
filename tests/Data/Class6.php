@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Ngmy\TypedArray\Tests\Data;
 
-class EClass extends AAbstractClass
+class Class6 extends AbstractClass1
 {
+    use Trait2;
 }

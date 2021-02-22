@@ -17,40 +17,40 @@ class TraitArrayTest extends TypedArrayTest
     {
         return [
             [
-                Data\AClass::class,
-                [new Data\AClass(), new Data\AClass()],
+                Data\Class1::class,
+                [new Data\Class1(), new Data\Class1()],
                 new InvalidArgumentException(),
             ],
             [
-                Data\AInterface::class,
-                [new Data\BClass(), new Data\BClass()],
+                Data\Interface1::class,
+                [new Data\Class2(), new Data\Class2()],
                 new InvalidArgumentException(),
             ],
             [
-                Data\AAbstractClass::class,
-                [new Data\EClass(), new Data\EClass()],
+                Data\AbstractClass1::class,
+                [new Data\Class5(), new Data\Class5()],
                 new InvalidArgumentException(),
             ],
             [
-                Data\ATrait::class,
-                [new Data\CClass(), new Data\CClass()],
+                Data\Trait1::class,
+                [new Data\Class3(), new Data\Class3()],
             ],
             [
-                Data\ATrait::class,
-                [new Data\FClass(), new Data\FClass()],
+                Data\Trait1::class,
+                [new Data\Class6(), new Data\Class6()],
             ],
             [
-                Data\ATrait::class,
-                [new Data\CClass(), new Data\FClass()],
+                Data\Trait1::class,
+                [new Data\Class3(), new Data\Class6()],
             ],
             [
-                Data\ATrait::class,
-                [new Data\AClass(), new Data\AClass()],
+                Data\Trait1::class,
+                [new Data\Class1(), new Data\Class1()],
                 new InvalidArgumentException(),
             ],
             [
-                Data\BTrait::class,
-                [new Data\CClass(), new Data\CClass()],
+                Data\Trait2::class,
+                [new Data\Class3(), new Data\Class3()],
                 new InvalidArgumentException(),
             ],
             [

@@ -15,29 +15,29 @@ class FunctionsTest extends TestCase
     {
         return [
             [
-                Data\CClass::class,
+                Data\Class3::class,
                 [
-                    Data\ATrait::class => Data\ATrait::class,
+                    Data\Trait1::class => Data\Trait1::class,
                 ],
             ],
             [
-                new Data\CClass(),
+                new Data\Class3(),
                 [
-                    Data\ATrait::class => Data\ATrait::class,
+                    Data\Trait1::class => Data\Trait1::class,
                 ],
             ],
             [
-                Data\FClass::class,
+                Data\Class6::class,
                 [
-                    Data\ATrait::class => Data\ATrait::class,
-                    Data\BTrait::class => Data\BTrait::class,
+                    Data\Trait1::class => Data\Trait1::class,
+                    Data\Trait2::class => Data\Trait2::class,
                 ],
             ],
             [
-                new Data\FClass(),
+                new Data\Class6(),
                 [
-                    Data\ATrait::class => Data\ATrait::class,
-                    Data\BTrait::class => Data\BTrait::class,
+                    Data\Trait1::class => Data\Trait1::class,
+                    Data\Trait2::class => Data\Trait2::class,
                 ],
             ],
             [
@@ -68,13 +68,13 @@ class FunctionsTest extends TestCase
     {
         return [
             [
-                Data\ATrait::class,
+                Data\Trait1::class,
                 [],
             ],
             [
-                Data\BTrait::class,
+                Data\Trait2::class,
                 [
-                    Data\ATrait::class => Data\ATrait::class,
+                    Data\Trait1::class => Data\Trait1::class,
                 ],
             ],
         ];

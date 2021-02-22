@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Ngmy\TypedArray\Tests\Data;
 
-class CClass
+class Class3
 {
-    use ATrait;
+    use Trait1;
 }
