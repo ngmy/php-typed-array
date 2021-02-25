@@ -8,7 +8,7 @@ use Exception;
 use InvalidArgumentException;
 use Ngmy\TypedArray\TypedArray;
 
-class InterfaceArrayTest extends TypedArrayTest
+class TypedArrayInterfaceValueTest extends TypedArrayPrimitiveValueTest
 {
     /**
      * @return array<int|string, array<int|string, mixed>>
@@ -49,29 +49,26 @@ class InterfaceArrayTest extends TypedArrayTest
     }
 
     /**
-     * @param array<int|string, mixed>|null $items
+     * @param list<mixed>|null $values
      * @dataProvider dataProvider
      *
      * @phpstan-template T
-     * @phpstan-param class-string<T> $type
+     * @phpstan-param class-string<T> $valueType
      */
-    public function test(string $type, ?array $items, Exception $exception = null): void
+    public function test(string $valueType, ?array $values, Exception $exception = null): void
     {
-        parent::test($type, $items, $exception);
+        parent::test($valueType, $values, $exception);
     }
 
     /**
-     * @param array<int|string, mixed>|null $items
-     * @return TypedArray<mixed>
+     * @return TypedArray<mixed, mixed>
      *
      * @phpstan-template T
-     * @phpstan-param class-string<T> $type
-     * @phpstan-return TypedArray<T>
+     * @phpstan-param class-string<T> $valueType
+     * @phpstan-return TypedArray<mixed, T>
      */
-    protected function createInstance(string $type, array $items = null): TypedArray
+    protected function createInstance(string $valueType): TypedArray
     {
-        return \is_null($items)
-            ? TypedArray::ofInterface($type)
-            : TypedArray::ofInterface($type, $items);
+        return TypedArray::new()->withInterfaceValue($valueType);
     }
 }

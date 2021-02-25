@@ -12,228 +12,520 @@ use IteratorAggregate;
 use Traversable;
 
 /**
- * @implements ArrayAccess<int|string, mixed>
+ * @implements ArrayAccess<mixed, mixed>
  * @implements IteratorAggregate<int|string, mixed>
  * @see https://www.php.net/manual/en/class.arrayaccess.php
  * @see https://www.php.net/manual/en/class.countable.php
  * @see https://www.php.net/manual/en/class.iteratoraggregate.php
  *
- * @phpstan-template T
- * @phpstan-implements ArrayAccess<int|string, T>
- * @phpstan-implements IteratorAggregate<int|string, T>
+ * @phpstan-template TKey
+ * @phpstan-template TValue
+ * @phpstan-implements ArrayAccess<TKey, TValue>
+ * @phpstan-implements IteratorAggregate<int|string, TValue>
  */
 class TypedArray implements ArrayAccess, Countable, IteratorAggregate
 {
-    private const TYPES = [
-        'array'    => 'array',
+    private const KEY_TYPES = [
         'bool'     => 'bool',
         'float'    => 'float',
         'int'      => 'int',
+        'mixed'    => 'mixed',
         'object'   => 'object',
         'resource' => 'resource',
         'string'   => 'string',
     ];
-    private const CLASS_KINDS = [
+    private const KEY_CLASS_KINDS = [
+        'class'     => 'class',
+        'interface' => 'interface',
+        'trait'     => 'trait',
+    ];
+    private const VALUE_TYPES = [
+        'array'    => 'array',
+        'bool'     => 'bool',
+        'float'    => 'float',
+        'int'      => 'int',
+        'mixed'    => 'mixed',
+        'object'   => 'object',
+        'resource' => 'resource',
+        'string'   => 'string',
+    ];
+    private const VALUE_CLASS_KINDS = [
         'class'     => 'class',
         'interface' => 'interface',
         'trait'     => 'trait',
     ];
 
-    /** @var string */
-    private $type;
+    /**
+     * @var string
+     * @phpstan-var class-string<TKey>|string
+     */
+    private $keyType;
     /** @var string|null */
-    private $classKind;
+    private $keyClassKind;
+    /**
+     * @var string
+     * @phpstan-var class-string<TValue>|string
+     */
+    private $valueType;
+    /** @var string|null */
+    private $valueClassKind;
     /**
      * @var array<int|string, mixed>
-     * @phpstan-var array<int|string, T>
+     * @phpstan-var array<int|string, TKey>
      */
-    private $items = [];
+    private $keys = [];
+    /**
+     * @var array<int|string, mixed>
+     * @phpstan-var array<int|string, TValue>
+     */
+    private $values = [];
 
     /**
-     * Creates a new instance of a typed array of the array type.
+     * Creates a new instance of the typed array.
      *
-     * @param array<int|string, array<int|string, mixed>> $items
-     * @return TypedArray<array<int|string, mixed>>
+     * @return TypedArray<mixed, mixed>
      */
-    public static function ofArray(array $items = []): self
+    public static function new(): self
     {
-        $typedArray = new self(self::TYPES['array']);
-        foreach ($items as $key => $item) {
-            $typedArray[$key] = $item;
-        }
-        return $typedArray;
+        return new self(
+            self::KEY_TYPES['mixed'],
+            null,
+            self::KEY_TYPES['mixed'],
+            null,
+        );
     }
 
     /**
-     * Creates a new instance of a typed array of the bool type.
+     * Returns a new instance of the typed array with the bool type key.
      *
-     * @param array<int|string, bool> $items
-     * @return TypedArray<bool>
+     * @return TypedArray<bool, mixed>
+     *
+     * @phpstan-return TypedArray<bool, TValue>
      */
-    public static function ofBool(array $items = []): self
+    public function withBoolKey(): self
     {
-        $typedArray = new self(self::TYPES['bool']);
-        foreach ($items as $key => $item) {
-            $typedArray[$key] = $item;
-        }
-        return $typedArray;
+        return new self(
+            self::KEY_TYPES['bool'],
+            null,
+            $this->valueType,
+            $this->valueClassKind
+        );
     }
 
     /**
-     * Creates a new instance of a typed array of the float type.
+     * Returns a new instance of the typed array with the float type key.
      *
-     * @param array<int|string, float> $items
-     * @return TypedArray<float>
+     * @return TypedArray<float, mixed>
+     *
+     * @phpstan-return TypedArray<float, TValue>
      */
-    public static function ofFloat(array $items = []): self
+    public function withFloatKey(): self
     {
-        $typedArray = new self(self::TYPES['float']);
-        foreach ($items as $key => $item) {
-            $typedArray[$key] = $item;
-        }
-        return $typedArray;
+        return new self(
+            self::KEY_TYPES['float'],
+            null,
+            $this->valueType,
+            $this->valueClassKind
+        );
     }
 
     /**
-     * Creates a new instance of a typed array of the int type.
+     * Returns a new instance of the typed array with the int type key.
      *
-     * @param array<int|string, int> $items
-     * @return TypedArray<int>
+     * @return TypedArray<int, mixed>
+     *
+     * @phpstan-return TypedArray<int, TValue>
      */
-    public static function ofInt(array $items = []): self
+    public function withIntKey(): self
     {
-        $typedArray = new self(self::TYPES['int']);
-        foreach ($items as $key => $item) {
-            $typedArray[$key] = $item;
-        }
-        return $typedArray;
+        return new self(
+            self::KEY_TYPES['int'],
+            null,
+            $this->valueType,
+            $this->valueClassKind
+        );
     }
 
     /**
-     * Creates a new instance of a typed array of the object type.
+     * Returns a new instance of the typed array with the mixed type key.
      *
-     * @param array<int|string, object> $items
-     * @return TypedArray<object>
+     * @return TypedArray<mixed, mixed>
+     *
+     * @phpstan-return TypedArray<mixed, TValue>
      */
-    public static function ofObject(array $items = []): self
+    public function withMixedKey(): self
     {
-        $typedArray = new self(self::TYPES['object']);
-        foreach ($items as $key => $item) {
-            $typedArray[$key] = $item;
-        }
-        return $typedArray;
+        return new self(
+            self::KEY_TYPES['mixed'],
+            null,
+            $this->valueType,
+            $this->valueClassKind
+        );
     }
 
     /**
-     * Creates a new instance of a typed array of the resource type.
+     * Returns a new instance of the typed array with the object type key.
      *
-     * @param array<int|string, resource> $items
-     * @return TypedArray<resource>
+     * If you are using an object as the key, it is recommended that you implement the equals()
+     * and hashCode() methods on the object to determine whether keys are equal or not.
+     * Otherwise, the === operator and spl_object_hash() function are used to determine it.
+     * @see \Ngmy\TypedArray\Tests\Data\Class7
+     *
+     * @return TypedArray<object, mixed>
+     *
+     * @phpstan-return TypedArray<object, TValue>
      */
-    public static function ofResource(array $items = []): self
+    public function withObjectKey(): self
     {
-        $typedArray = new self(self::TYPES['resource']);
-        foreach ($items as $key => $item) {
-            $typedArray[$key] = $item;
-        }
-        return $typedArray;
+        return new self(
+            self::KEY_TYPES['object'],
+            null,
+            $this->valueType,
+            $this->valueClassKind
+        );
     }
 
     /**
-     * Creates a new instance of a typed array of the string type.
+     * Returns a new instance of the typed array with the resource type key.
      *
-     * @param array<int|string, string> $items
-     * @return TypedArray<string>
+     * @return TypedArray<resource, mixed>
+     *
+     * @phpstan-return TypedArray<resource, TValue>
      */
-    public static function ofString(array $items = []): self
+    public function withResourceKey(): self
     {
-        $typedArray = new self(self::TYPES['string']);
-        foreach ($items as $key => $item) {
-            $typedArray[$key] = $item;
-        }
-        return $typedArray;
+        return new self(
+            self::KEY_TYPES['resource'],
+            null,
+            $this->valueType,
+            $this->valueClassKind
+        );
     }
 
     /**
-     * Creates a new instance of a typed array of the specified class type.
+     * Returns a new instance of the typed array with the string type key.
      *
-     * @param array<int|string, object> $items
-     * @return TypedArray<object>
+     * @return TypedArray<string, mixed>
+     *
+     * @phpstan-return TypedArray<string, TValue>
+     */
+    public function withStringKey(): self
+    {
+        return new self(
+            self::KEY_TYPES['string'],
+            null,
+            $this->valueType,
+            $this->valueClassKind
+        );
+    }
+
+    /**
+     * Returns a new instance of the typed array with the specified class type key.
+     *
+     * If you are using an object as the key, it is recommended that you implement the equals()
+     * and hashCode() methods on the object to determine whether keys are equal or not.
+     * Otherwise, the === operator and spl_object_hash() function are used to determine it.
+     * @see \Ngmy\TypedArray\Tests\Data\Class7
+     *
+     * @return TypedArray<object, mixed>
      *
      * @phpstan-template TClass
      * @phpstan-param class-string<TClass> $class
-     * @phpstan-return TypedArray<TClass>
+     * @phpstan-return TypedArray<TClass, TValue>
      */
-    public static function ofClass(string $class, array $items = []): self
+    public function withClassKey(string $class): self
     {
-        $typedArray = new self($class);
-        if (!\class_exists($typedArray->type)) {
+        if (!\class_exists($class)) {
             throw new InvalidArgumentException(
                 \sprintf(
-                    'The type of the typed array must be the name of an existing class, "%s" given.',
-                    $typedArray->type
+                    'The class type key must be the name of an existing class, "%s" given.',
+                    $class
                 )
             );
         }
-        $typedArray->classKind = self::CLASS_KINDS['class'];
-        foreach ($items as $key => $item) {
-            $typedArray[$key] = $item;
-        }
-        return $typedArray;
+        return new self(
+            $class,
+            self::KEY_CLASS_KINDS['class'],
+            $this->valueType,
+            $this->valueClassKind
+        );
     }
 
     /**
-     * Creates a new instance of a typed array of the class type that implements the specified interface.
+     * Returns a new instance of the typed array with the class type key that implements the specified interface.
      *
-     * @param array<int|string, object> $items
-     * @return TypedArray<object>
+     * If you are using an object as the key, it is recommended that you implement the equals()
+     * and hashCode() methods on the object to determine whether keys are equal or not.
+     * Otherwise, the === operator and spl_object_hash() function are used to determine it.
+     * @see \Ngmy\TypedArray\Tests\Data\Class7
      *
-     * @phpstan-template TClass
-     * @phpstan-param class-string<TClass> $class
-     * @phpstan-return TypedArray<TClass>
+     * @return TypedArray<object, mixed>
+     *
+     * @phpstan-template TInterface
+     * @phpstan-param class-string<TInterface> $interface
+     * @phpstan-return TypedArray<TInterface, TValue>
      */
-    public static function ofInterface(string $class, array $items = []): self
+    public function withInterfaceKey(string $interface): self
     {
-        $typedArray = new self($class);
-        if (!\interface_exists($typedArray->type)) {
+        if (!\interface_exists($interface)) {
             throw new InvalidArgumentException(
                 \sprintf(
-                    'The type of the typed array must be the name of an existing interface, "%s" given.',
-                    $typedArray->type
+                    'The interface type key must be the name of an existing interface, "%s" given.',
+                    $interface
                 )
             );
         }
-        $typedArray->classKind = self::CLASS_KINDS['interface'];
-        foreach ($items as $key => $item) {
-            $typedArray[$key] = $item;
-        }
-        return $typedArray;
+        return new self(
+            $interface,
+            self::KEY_CLASS_KINDS['interface'],
+            $this->valueType,
+            $this->valueClassKind
+        );
     }
 
     /**
-     * Creates a new instance of a typed array of the class type that uses the specified trait.
+     * Returns a new instance of the typed array with the class type key that uses the specified trait.
      *
-     * @param array<int|string, object> $items
-     * @return TypedArray<object>
+     * If you are using an object as the key, it is recommended that you implement the equals()
+     * and hashCode() methods on the object to determine whether keys are equal or not.
+     * Otherwise, the === operator and spl_object_hash() function are used to determine it.
+     * @see \Ngmy\TypedArray\Tests\Data\Class7
+     *
+     * @return TypedArray<object, mixed>
      *
      * @phpstan-param class-string $trait
      */
-    public static function ofTrait(string $trait, array $items = []): self
+    public function withTraitKey(string $trait): self
     {
-        $typedArray = new self($trait);
-        if (!\trait_exists($typedArray->type)) {
+        if (!\trait_exists($trait)) {
             throw new InvalidArgumentException(
                 \sprintf(
-                    'The type of the typed array must be the name of an existing trait, "%s" given.',
-                    $typedArray->type
+                    'The trait type key must be the name of an existing trait, "%s" given.',
+                    $trait
                 )
             );
         }
-        $typedArray->classKind = self::CLASS_KINDS['trait'];
-        foreach ($items as $key => $item) {
-            $typedArray[$key] = $item;
+        return new self(
+            $trait,
+            self::KEY_CLASS_KINDS['trait'],
+            $this->valueType,
+            $this->valueClassKind
+        );
+    }
+
+    /**
+     * Returns a new instance of the typed array with the array type value.
+     *
+     * @return TypedArray<mixed, array<int|string, mixed>>
+     *
+     * @phpstan-return TypedArray<TKey, array<int|string, mixed>>
+     */
+    public function withArrayValue(): self
+    {
+        return new self(
+            $this->keyType,
+            $this->keyClassKind,
+            self::VALUE_TYPES['array'],
+            null
+        );
+    }
+
+    /**
+     * Returns a new instance of the typed array with the bool type value.
+     *
+     * @return TypedArray<mixed, bool>
+     *
+     * @phpstan-return TypedArray<TKey, bool>
+     */
+    public function withBoolValue(): self
+    {
+        return new self(
+            $this->keyType,
+            $this->keyClassKind,
+            self::VALUE_TYPES['bool'],
+            null
+        );
+    }
+
+    /**
+     * Returns a new instance of the typed array with the float type value.
+     *
+     * @return TypedArray<mixed, float>
+     *
+     * @phpstan-return TypedArray<TKey, float>
+     */
+    public function withFloatValue(): self
+    {
+        return new self(
+            $this->keyType,
+            $this->keyClassKind,
+            self::VALUE_TYPES['float'],
+            null
+        );
+    }
+
+    /**
+     * Returns a new instance of the typed array with the int type value.
+     *
+     * @return TypedArray<mixed, int>
+     *
+     * @phpstan-return TypedArray<TKey, int>
+     */
+    public function withIntValue(): self
+    {
+        return new self(
+            $this->keyType,
+            $this->keyClassKind,
+            self::VALUE_TYPES['int'],
+            null
+        );
+    }
+
+    /**
+     * Returns a new instance of the typed array with the mixed type value.
+     *
+     * @return TypedArray<mixed, mixed>
+     *
+     * @phpstan-return TypedArray<TKey, mixed>
+     */
+    public function withMixedValue(): self
+    {
+        return new self(
+            $this->keyType,
+            $this->keyClassKind,
+            self::VALUE_TYPES['mixed'],
+            null
+        );
+    }
+
+    /**
+     * Returns a new instance of the typed array with the object type value.
+     *
+     * @return TypedArray<mixed, object>
+     *
+     * @phpstan-return TypedArray<TKey, object>
+     */
+    public function withObjectValue(): self
+    {
+        return new self(
+            $this->keyType,
+            $this->keyClassKind,
+            self::VALUE_TYPES['object'],
+            null
+        );
+    }
+
+    /**
+     * Returns a new instance of the typed array with the resource type value.
+     *
+     * @return TypedArray<mixed, resource>
+     *
+     * @phpstan-return TypedArray<TKey, resource>
+     */
+    public function withResourceValue(): self
+    {
+        return new self(
+            $this->keyType,
+            $this->keyClassKind,
+            self::VALUE_TYPES['resource'],
+            null
+        );
+    }
+
+    /**
+     * Returns a new instance of the typed array with the string type value.
+     *
+     * @return TypedArray<mixed, string>
+     *
+     * @phpstan-return TypedArray<TKey, string>
+     */
+    public function withStringValue(): self
+    {
+        return new self(
+            $this->keyType,
+            $this->keyClassKind,
+            self::VALUE_TYPES['string'],
+            null
+        );
+    }
+
+    /**
+     * Returns a new instance of the typed array with the specified class type value.
+     *
+     * @return TypedArray<mixed, object>
+     *
+     * @phpstan-template TClass
+     * @phpstan-param class-string<TClass> $class
+     * @phpstan-return TypedArray<TKey, TClass>
+     */
+    public function withClassValue(string $class): self
+    {
+        if (!\class_exists($class)) {
+            throw new InvalidArgumentException(
+                \sprintf(
+                    'The class type value value be the name of an existing class, "%s" given.',
+                    $class
+                )
+            );
         }
-        return $typedArray;
+        return new self(
+            $this->keyType,
+            $this->keyClassKind,
+            $class,
+            self::VALUE_CLASS_KINDS['class']
+        );
+    }
+
+    /**
+     * Returns a new instance of the typed array with the class type value that implements the specified interface.
+     *
+     * @return TypedArray<mixed, object>
+     *
+     * @phpstan-template TInterface
+     * @phpstan-param class-string<TInterface> $interface
+     * @phpstan-return TypedArray<TKey, TInterface>
+     */
+    public function withInterfaceValue(string $interface): self
+    {
+        if (!\interface_exists($interface)) {
+            throw new InvalidArgumentException(
+                \sprintf(
+                    'The interface type value must be the name of an existing interface, "%s" given.',
+                    $interface
+                )
+            );
+        }
+        return new self(
+            $this->keyType,
+            $this->keyClassKind,
+            $interface,
+            self::VALUE_CLASS_KINDS['interface']
+        );
+    }
+
+    /**
+     * Returns a new instance of the typed array with the class type value that uses the specified trait.
+     *
+     * @return TypedArray<mixed, object>
+     *
+     * @phpstan-param class-string $trait
+     */
+    public function withTraitValue(string $trait): self
+    {
+        if (!\trait_exists($trait)) {
+            throw new InvalidArgumentException(
+                \sprintf(
+                    'The trait type value must be the name of an existing trait, "%s" given.',
+                    $trait
+                )
+            );
+        }
+        return new self(
+            $this->keyType,
+            $this->keyClassKind,
+            $trait,
+            self::VALUE_CLASS_KINDS['trait']
+        );
     }
 
     /**
@@ -241,85 +533,103 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     public function isEmpty(): bool
     {
-        return empty($this->items);
+        return empty($this->values);
     }
 
     /**
-     * Gets the typed array of items as a plain array.
+     * Gets the typed array of values as a plain array.
      *
      * @return array<int|string, mixed>
      *
-     * @phpstan-return array<int|string, T>
+     * @phpstan-return array<int|string, TValue>
      */
     public function toArray(): array
     {
-        return $this->items;
+        return $this->values;
     }
 
     /**
-     * @param int|string|null $key
+     * @param mixed $key
      * @see https://www.php.net/manual/en/arrayaccess.offsetexists.php
+     *
+     * @phpstan-param TKey $key
      */
     public function offsetExists($key): bool
     {
-        return isset($this->items[$key]);
+        return isset($this->values[$this->getKeyHashCode($key)]);
     }
 
     /**
-     * @param int|string|null $key
-     * @return mixed|null
+     * @param mixed $key
+     * @return mixed
      * @see https://www.php.net/manual/en/arrayaccess.offsetget.php
      *
-     * @phpstan-return T|null
+     * @phpstan-param TKey $key
+     * @phpstan-return TValue|null
      */
     public function offsetGet($key)
     {
-        return $this->items[$key] ?? null;
+        return $this->values[$this->getKeyHashCode($key)] ?? null;
     }
 
     /**
-     * @param int|string|null $key
-     * @param mixed           $item
+     * @param mixed $key
+     * @param mixed $value
      * @see https://www.php.net/manual/en/arrayaccess.offsetset.php
      *
-     * @phpstan-param T $item
+     * @phpstan-param TKey   $key
+     * @phpstan-param TValue $value
      */
-    public function offsetSet($key, $item): void
+    public function offsetSet($key, $value): void
     {
         if (
-            ($this->type == self::TYPES['array'] && !\is_array($item))
-            || ($this->type == self::TYPES['bool'] && !\is_bool($item))
-            || ($this->type == self::TYPES['float'] && !\is_float($item))
-            || ($this->type == self::TYPES['int'] && !\is_int($item))
-            || ($this->type == self::TYPES['object'] && !\is_object($item))
-            || ($this->type == self::TYPES['resource'] && !\is_resource($item))
-            || ($this->type == self::TYPES['string'] && !\is_string($item))
-            || ($this->classKind == self::CLASS_KINDS['class'] && !\is_a($item, $this->type))
-            || ($this->classKind == self::CLASS_KINDS['interface'] && !\is_subclass_of($item, $this->type))
+            ($this->valueType == self::VALUE_TYPES['array'] && !\is_array($value))
+            || ($this->valueType == self::VALUE_TYPES['bool'] && !\is_bool($value))
+            || ($this->valueType == self::VALUE_TYPES['float'] && !\is_float($value))
+            || ($this->valueType == self::VALUE_TYPES['int'] && !\is_int($value))
+            || ($this->valueType == self::VALUE_TYPES['object'] && !\is_object($value))
+            || ($this->valueType == self::VALUE_TYPES['resource'] && !\is_resource($value))
+            || ($this->valueType == self::VALUE_TYPES['string'] && !\is_string($value))
             || (
-                $this->classKind == self::CLASS_KINDS['trait']
-                && !\array_key_exists($this->type, class_uses_recursive($item))
+                $this->valueClassKind == self::VALUE_CLASS_KINDS['class']
+                && !\is_a($value, $this->valueType)
+            )
+            || (
+                $this->valueClassKind == self::VALUE_CLASS_KINDS['interface']
+                && !\is_subclass_of($value, $this->valueType)
+            )
+            || (
+                $this->valueClassKind == self::VALUE_CLASS_KINDS['trait']
+                && !\array_key_exists($this->valueType, class_uses_recursive($value))
             )
         ) {
-            $givenType = \is_object($item) ? \get_class($item) : \gettype($item);
+            $givenValueType = \is_object($value) ? \get_class($value) : \gettype($value);
             throw new InvalidArgumentException(
-                \sprintf('The type of items in the typed array must be "%s", "%s" given.', $this->type, $givenType)
+                \sprintf('The type of the value must be "%s", "%s" given.', $this->valueType, $givenValueType)
             );
         }
-        if (\is_null($key)) {
-            $this->items[] = $item;
+        $keyHashCode = $this->getKeyHashCode($key);
+        if (\is_null($keyHashCode)) {
+            $this->values[] = $value;
         } else {
-            $this->items[$key] = $item;
+            $this->values[$keyHashCode] = $value;
+            if ($this->keyType == self::KEY_TYPES['object'] || !\is_null($this->keyClassKind)) {
+                $this->keys[$keyHashCode] = $key;
+            }
         }
     }
 
     /**
-     * @param int|string|null $key
+     * @param mixed $key
      * @see https://www.php.net/manual/en/arrayaccess.offsetunset.php
+     *
+     * @phpstan-param TKey $key
      */
     public function offsetUnset($key): void
     {
-        unset($this->items[$key]);
+        $keyHashCode = $this->getKeyHashCode($key);
+        unset($this->values[$keyHashCode]);
+        unset($this->keys[$keyHashCode]);
     }
 
     /**
@@ -327,22 +637,77 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     public function count(): int
     {
-        return \count($this->items);
+        return \count($this->values);
     }
 
     /**
      * @return Traversable<int|string, mixed>
      * @see https://www.php.net/manual/en/iteratoraggregate.getiterator.php
      *
-     * @phpstan-return Traversable<int|string, T>
+     * @phpstan-return Traversable<int|string, TValue>
      */
     public function getIterator(): Traversable
     {
-        return new ArrayIterator($this->items);
+        return new ArrayIterator($this->values);
     }
 
-    private function __construct(string $type)
+    private function __construct(
+        string $keyType,
+        ?string $keyClassKind,
+        string $valueType,
+        ?string $valueClassKind
+    ) {
+        $this->keyType = $keyType;
+        $this->keyClassKind = $keyClassKind;
+        $this->valueType = $valueType;
+        $this->valueClassKind = $valueClassKind;
+    }
+
+    /**
+     * @param mixed $key
+     * @return int|string|null
+     *
+     * @phpstan-param TKey $key
+     */
+    private function getKeyHashCode($key)
     {
-        $this->type = $type;
+        if (
+            ($this->keyType == self::KEY_TYPES['bool'] && !\is_bool($key))
+            || ($this->keyType == self::KEY_TYPES['float'] && !\is_float($key))
+            || ($this->keyType == self::KEY_TYPES['int'] && !\is_int($key) && !\is_null($key))
+            || ($this->keyType == self::KEY_TYPES['object'] && !\is_object($key))
+            || ($this->keyType == self::KEY_TYPES['resource'] && !\is_resource($key))
+            || ($this->keyType == self::KEY_TYPES['string'] && !\is_string($key))
+            || (
+                $this->keyClassKind == self::KEY_CLASS_KINDS['class']
+                && !\is_a($key, $this->keyType)
+            )
+            || (
+                $this->keyClassKind == self::KEY_CLASS_KINDS['interface']
+                && !\is_subclass_of($key, $this->keyType)
+            )
+            || (
+                $this->keyClassKind == self::KEY_CLASS_KINDS['trait']
+                && !\array_key_exists($this->keyType, class_uses_recursive($key))
+            )
+        ) {
+            $givenKeyType = \is_object($key) ? \get_class($key) : \gettype($key);
+            throw new InvalidArgumentException(
+                \sprintf('The type of the key must be "%s", "%s" given.', $this->keyType, $givenKeyType)
+            );
+        }
+        if (\is_null($key)) {
+            return $key;
+        }
+        if (\is_float($key)) {
+            return \sprintf('%.30f', $key);
+        }
+        if (\is_int($key)) {
+            return $key;
+        }
+        if (\is_object($key)) {
+            return \method_exists($key, 'hashCode') ? $key->hashCode() : \spl_object_hash($key);
+        }
+        return (string) $key;
     }
 }

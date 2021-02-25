@@ -8,7 +8,7 @@ use Exception;
 use InvalidArgumentException;
 use Ngmy\TypedArray\TypedArray;
 
-class ClassArrayTest extends TypedArrayTest
+class TypedArrayInterfaceKeyTest extends TypedArrayPrimitiveKeyTest
 {
     /**
      * @return array<int|string, array<int|string, mixed>>
@@ -19,32 +19,21 @@ class ClassArrayTest extends TypedArrayTest
             [
                 Data\Class1::class,
                 [new Data\Class1(), new Data\Class1()],
-            ],
-            [
-                Data\Class1::class,
-                [new Data\Class4(), new Data\Class4()],
-            ],
-            [
-                Data\Class1::class,
-                [new Data\Class1(), new Data\Class4()],
-            ],
-            [
-                Data\Class1::class,
-                [new Data\Class2(), new Data\Class2()],
                 new InvalidArgumentException(),
             ],
             [
                 Data\AbstractClass1::class,
                 [new Data\Class5(), new Data\Class5()],
-            ],
-            [
-                Data\AbstractClass1::class,
-                [new Data\Class1(), new Data\Class1()],
                 new InvalidArgumentException(),
             ],
             [
                 Data\Interface1::class,
                 [new Data\Class2(), new Data\Class2()],
+                [new Data\Class2(), new Data\Class2()],
+            ],
+            [
+                Data\Interface1::class,
+                [new Data\Class1(), new Data\Class1()],
                 new InvalidArgumentException(),
             ],
             [
@@ -61,29 +50,24 @@ class ClassArrayTest extends TypedArrayTest
     }
 
     /**
-     * @param array<int|string, mixed>|null $items
+     * @param list<mixed>                $keys
+     * @param Exception|list<mixed>|null $expected
      * @dataProvider dataProvider
-     *
-     * @phpstan-template T
-     * @phpstan-param class-string<T> $type
      */
-    public function test(string $type, ?array $items, Exception $exception = null): void
+    public function test(string $keyType, ?array $keys, $expected): void
     {
-        parent::test($type, $items, $exception);
+        parent::test($keyType, $keys, $expected);
     }
 
     /**
-     * @param array<int|string, mixed>|null $items
-     * @return TypedArray<mixed>
+     * @return TypedArray<mixed, mixed>
      *
      * @phpstan-template T
-     * @phpstan-param class-string<T> $type
-     * @phpstan-return TypedArray<T>
+     * @phpstan-param class-string<T> $keyType
+     * @phpstan-return TypedArray<T, mixed>
      */
-    protected function createInstance(string $type, array $items = null): TypedArray
+    protected function createInstance(string $keyType): TypedArray
     {
-        return \is_null($items)
-            ? TypedArray::ofClass($type)
-            : TypedArray::ofClass($type, $items);
+        return TypedArray::new()->withInterfaceKey($keyType);
     }
 }

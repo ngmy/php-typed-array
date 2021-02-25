@@ -92,7 +92,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 </aside>
 
         
@@ -109,7 +109,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>ArrayAccess&lt;int|string, mixed&gt;</p>
+                                                 <section class="phpdocumentor-description"><p>ArrayAccess&lt;mixed, mixed&gt;</p>
 </section>
 
                                     </dd>
@@ -154,7 +154,16 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>T</p>
+                                                 <section class="phpdocumentor-description"><p>TKey</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-template</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TValue</p>
 </section>
 
                                     </dd>
@@ -163,7 +172,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>ArrayAccess&lt;int|string, T&gt;</p>
+                                                 <section class="phpdocumentor-description"><p>ArrayAccess&lt;TKey, TValue&gt;</p>
 </section>
 
                                     </dd>
@@ -172,7 +181,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>IteratorAggregate&lt;int|string, T&gt;</p>
+                                                 <section class="phpdocumentor-description"><p>IteratorAggregate&lt;int|string, TValue&gt;</p>
 </section>
 
                                     </dd>
@@ -205,35 +214,70 @@
 
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -private">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#constant_CLASS_KINDS">CLASS_KINDS</a>
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#constant_KEY_CLASS_KINDS">KEY_CLASS_KINDS</a>
     <span>
         &nbsp;= [&#039;class&#039; =&gt; &#039;class&#039;, &#039;interface&#039; =&gt; &#039;interface&#039;, &#039;trait&#039; =&gt; &#039;trait&#039;]                    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -private">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#constant_TYPES">TYPES</a>
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#constant_KEY_TYPES">KEY_TYPES</a>
     <span>
-        &nbsp;= [&#039;array&#039; =&gt; &#039;array&#039;, &#039;bool&#039; =&gt; &#039;bool&#039;, &#039;float&#039; =&gt; &#039;float&#039;, &#039;int&#039; =&gt; &#039;int&#039;, &#039;object&#039; =&gt; &#039;object&#039;, &#039;resource&#039; =&gt; &#039;resource&#039;, &#039;string&#039; =&gt; &#039;string&#039;]                    </span>
+        &nbsp;= [&#039;bool&#039; =&gt; &#039;bool&#039;, &#039;float&#039; =&gt; &#039;float&#039;, &#039;int&#039; =&gt; &#039;int&#039;, &#039;mixed&#039; =&gt; &#039;mixed&#039;, &#039;object&#039; =&gt; &#039;object&#039;, &#039;resource&#039; =&gt; &#039;resource&#039;, &#039;string&#039; =&gt; &#039;string&#039;]                    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#constant_VALUE_CLASS_KINDS">VALUE_CLASS_KINDS</a>
+    <span>
+        &nbsp;= [&#039;class&#039; =&gt; &#039;class&#039;, &#039;interface&#039; =&gt; &#039;interface&#039;, &#039;trait&#039; =&gt; &#039;trait&#039;]                    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#constant_VALUE_TYPES">VALUE_TYPES</a>
+    <span>
+        &nbsp;= [&#039;array&#039; =&gt; &#039;array&#039;, &#039;bool&#039; =&gt; &#039;bool&#039;, &#039;float&#039; =&gt; &#039;float&#039;, &#039;int&#039; =&gt; &#039;int&#039;, &#039;mixed&#039; =&gt; &#039;mixed&#039;, &#039;object&#039; =&gt; &#039;object&#039;, &#039;resource&#039; =&gt; &#039;resource&#039;, &#039;string&#039; =&gt; &#039;string&#039;]                    </span>
 </dt>
 <dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#property_classKind">$classKind</a>
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#property_keyClassKind">$keyClassKind</a>
     <span>
                 &nbsp;: string|null            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#property_items">$items</a>
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#property_keys">$keys</a>
     <span>
                 &nbsp;: array&lt;int|string, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#property_type">$type</a>
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#property_keyType">$keyType</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#property_valueClassKind">$valueClassKind</a>
+    <span>
+                &nbsp;: string|null            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#property_values">$values</a>
+    <span>
+                &nbsp;: array&lt;int|string, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#property_valueType">$valueType</a>
     <span>
                 &nbsp;: string            </span>
 </dt>
@@ -261,32 +305,11 @@
 <dd>Determines if the typed array is empty or not.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofArray">ofArray()</a>
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_new">new()</a>
     <span>
-                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, array&lt;int|string, mixed&gt;&gt;    </span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, mixed&gt;    </span>
 </dt>
-<dd>Creates a new instance of a typed array of the array type.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofBool">ofBool()</a>
-    <span>
-                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, bool&gt;    </span>
-</dt>
-<dd>Creates a new instance of a typed array of the bool type.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofClass">ofClass()</a>
-    <span>
-                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, object&gt;    </span>
-</dt>
-<dd>Creates a new instance of a typed array of the specified class type.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofFloat">ofFloat()</a>
-    <span>
-                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, float&gt;    </span>
-</dt>
-<dd>Creates a new instance of a typed array of the float type.</dd>
+<dd>Creates a new instance of the typed array.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Ngmy-TypedArray-TypedArray.html#method_offsetExists">offsetExists()</a>
@@ -298,7 +321,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Ngmy-TypedArray-TypedArray.html#method_offsetGet">offsetGet()</a>
     <span>
-                        &nbsp;: mixed|null    </span>
+                        &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
@@ -317,58 +340,170 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofInt">ofInt()</a>
-    <span>
-                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, int&gt;    </span>
-</dt>
-<dd>Creates a new instance of a typed array of the int type.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofInterface">ofInterface()</a>
-    <span>
-                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, object&gt;    </span>
-</dt>
-<dd>Creates a new instance of a typed array of the class type that implements the specified interface.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofObject">ofObject()</a>
-    <span>
-                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, object&gt;    </span>
-</dt>
-<dd>Creates a new instance of a typed array of the object type.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofResource">ofResource()</a>
-    <span>
-                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, resource&gt;    </span>
-</dt>
-<dd>Creates a new instance of a typed array of the resource type.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofString">ofString()</a>
-    <span>
-                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, string&gt;    </span>
-</dt>
-<dd>Creates a new instance of a typed array of the string type.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofTrait">ofTrait()</a>
-    <span>
-                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, object&gt;    </span>
-</dt>
-<dd>Creates a new instance of a typed array of the class type that uses the specified trait.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Ngmy-TypedArray-TypedArray.html#method_toArray">toArray()</a>
     <span>
                         &nbsp;: array&lt;int|string, mixed&gt;    </span>
 </dt>
-<dd>Gets the typed array of items as a plain array.</dd>
+<dd>Gets the typed array of values as a plain array.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withArrayValue">withArrayValue()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, array&lt;int|string, mixed&gt;&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the array type value.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withBoolKey">withBoolKey()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;bool, mixed&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the bool type key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withBoolValue">withBoolValue()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, bool&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the bool type value.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withClassKey">withClassKey()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;object, mixed&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the specified class type key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withClassValue">withClassValue()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, object&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the specified class type value.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withFloatKey">withFloatKey()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;float, mixed&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the float type key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withFloatValue">withFloatValue()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, float&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the float type value.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withInterfaceKey">withInterfaceKey()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;object, mixed&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the class type key that implements the specified interface.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withInterfaceValue">withInterfaceValue()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, object&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the class type value that implements the specified interface.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withIntKey">withIntKey()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;int, mixed&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the int type key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withIntValue">withIntValue()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, int&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the int type value.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withMixedKey">withMixedKey()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, mixed&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the mixed type key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withMixedValue">withMixedValue()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, mixed&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the mixed type value.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withObjectKey">withObjectKey()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;object, mixed&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the object type key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withObjectValue">withObjectValue()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, object&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the object type value.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withResourceKey">withResourceKey()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;resource, mixed&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the resource type key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withResourceValue">withResourceValue()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, resource&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the resource type value.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withStringKey">withStringKey()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string, mixed&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the string type key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withStringValue">withStringValue()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, string&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the string type value.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withTraitKey">withTraitKey()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;object, mixed&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the class type key that uses the specified trait.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withTraitValue">withTraitValue()</a>
+    <span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, object&gt;    </span>
+</dt>
+<dd>Returns a new instance of the typed array with the class type value that uses the specified trait.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/Ngmy-TypedArray-TypedArray.html#method___construct">__construct()</a>
     <span>
                         &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_getKeyHashCode">getKeyHashCode()</a>
+    <span>
+                        &nbsp;: int|string|null    </span>
 </dt>
 <dd></dd>
 
@@ -383,22 +518,22 @@
             <a href="classes/Ngmy-TypedArray-TypedArray.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article class="phpdocumentor-element -constant -private ">
-    <h4 class="phpdocumentor-element__name" id="constant_CLASS_KINDS">
-        CLASS_KINDS
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#constant_CLASS_KINDS" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="constant_KEY_CLASS_KINDS">
+        KEY_CLASS_KINDS
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#constant_KEY_CLASS_KINDS" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 </aside>
 
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">private</span>
     <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">CLASS_KINDS</span>
+    <span class="phpdocumentor-signature__name">KEY_CLASS_KINDS</span>
     = <span class="phpdocumentor-signature__default-value">[&#039;class&#039; =&gt; &#039;class&#039;, &#039;interface&#039; =&gt; &#039;interface&#039;, &#039;trait&#039; =&gt; &#039;trait&#039;]</span>
 </code>
 
@@ -408,23 +543,73 @@
 
 </article>
                     <article class="phpdocumentor-element -constant -private ">
-    <h4 class="phpdocumentor-element__name" id="constant_TYPES">
-        TYPES
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#constant_TYPES" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="constant_KEY_TYPES">
+        KEY_TYPES
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#constant_KEY_TYPES" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 </aside>
 
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">private</span>
     <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">TYPES</span>
-    = <span class="phpdocumentor-signature__default-value">[&#039;array&#039; =&gt; &#039;array&#039;, &#039;bool&#039; =&gt; &#039;bool&#039;, &#039;float&#039; =&gt; &#039;float&#039;, &#039;int&#039; =&gt; &#039;int&#039;, &#039;object&#039; =&gt; &#039;object&#039;, &#039;resource&#039; =&gt; &#039;resource&#039;, &#039;string&#039; =&gt; &#039;string&#039;]</span>
+    <span class="phpdocumentor-signature__name">KEY_TYPES</span>
+    = <span class="phpdocumentor-signature__default-value">[&#039;bool&#039; =&gt; &#039;bool&#039;, &#039;float&#039; =&gt; &#039;float&#039;, &#039;int&#039; =&gt; &#039;int&#039;, &#039;mixed&#039; =&gt; &#039;mixed&#039;, &#039;object&#039; =&gt; &#039;object&#039;, &#039;resource&#039; =&gt; &#039;resource&#039;, &#039;string&#039; =&gt; &#039;string&#039;]</span>
+</code>
+
+
+    
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -private ">
+    <h4 class="phpdocumentor-element__name" id="constant_VALUE_CLASS_KINDS">
+        VALUE_CLASS_KINDS
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#constant_VALUE_CLASS_KINDS" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">52</span>
+</aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">VALUE_CLASS_KINDS</span>
+    = <span class="phpdocumentor-signature__default-value">[&#039;class&#039; =&gt; &#039;class&#039;, &#039;interface&#039; =&gt; &#039;interface&#039;, &#039;trait&#039; =&gt; &#039;trait&#039;]</span>
+</code>
+
+
+    
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -private ">
+    <h4 class="phpdocumentor-element__name" id="constant_VALUE_TYPES">
+        VALUE_TYPES
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#constant_VALUE_TYPES" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">42</span>
+</aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">VALUE_TYPES</span>
+    = <span class="phpdocumentor-signature__default-value">[&#039;array&#039; =&gt; &#039;array&#039;, &#039;bool&#039; =&gt; &#039;bool&#039;, &#039;float&#039; =&gt; &#039;float&#039;, &#039;int&#039; =&gt; &#039;int&#039;, &#039;mixed&#039; =&gt; &#039;mixed&#039;, &#039;object&#039; =&gt; &#039;object&#039;, &#039;resource&#039; =&gt; &#039;resource&#039;, &#039;string&#039; =&gt; &#039;string&#039;]</span>
 </code>
 
 
@@ -447,23 +632,23 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_classKind">
-        $classKind
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#property_classKind" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_keyClassKind">
+        $keyClassKind
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#property_keyClassKind" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">string|null</span>
-    <span class="phpdocumentor-signature__name">$classKind</span>
+    <span class="phpdocumentor-signature__name">$keyClassKind</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
@@ -478,23 +663,23 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_items">
-        $items
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#property_items" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_keys">
+        $keys
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#property_keys" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;int|string, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$items</span>
+    <span class="phpdocumentor-signature__name">$keys</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
         <section class="phpdocumentor-description"></section>
@@ -510,7 +695,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>array&lt;int|string, T&gt;</p>
+                                                 <section class="phpdocumentor-description"><p>array&lt;int|string, TKey&gt;</p>
 </section>
 
                                     </dd>
@@ -524,28 +709,166 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_type">
-        $type
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#property_type" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_keyType">
+        $keyType
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#property_keyType" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$type</span>
+    <span class="phpdocumentor-signature__name">$keyType</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-var</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>class-string<TKey>|string</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_valueClassKind">
+        $valueClassKind
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#property_valueClassKind" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">71</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$valueClassKind</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_values">
+        $values
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#property_values" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">81</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;int|string, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$values</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-var</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>array&lt;int|string, TValue&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_valueType">
+        $valueType
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#property_valueType" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">69</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$valueType</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-var</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>class-string<TValue>|string</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
 </article>
             </section>
@@ -568,7 +891,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">328</span>
+    <span class="phpdocumentor-element-found-in__line">638</span>
 </aside>
 
     
@@ -616,7 +939,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">339</span>
+    <span class="phpdocumentor-element-found-in__line">649</span>
 </aside>
 
     
@@ -647,7 +970,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>Traversable&lt;int|string, T&gt;</p>
+                                                 <section class="phpdocumentor-description"><p>Traversable&lt;int|string, TValue&gt;</p>
 </section>
 
                                     </dd>
@@ -673,7 +996,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">242</span>
+    <span class="phpdocumentor-element-found-in__line">534</span>
 </aside>
 
         <p class="phpdocumentor-summary">Determines if the typed array is empty or not.</p>
@@ -700,184 +1023,9 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_ofArray">
-        ofArray()
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofArray" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">58</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Creates a new instance of a typed array of the array type.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">ofArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, array&lt;int|string, mixed&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$items</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, array&lt;int|string, mixed&gt;&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$items</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, array&lt;int|string, mixed&gt;&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, array&lt;int|string, mixed&gt;&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_ofBool">
-        ofBool()
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofBool" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">73</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Creates a new instance of a typed array of the bool type.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">ofBool</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, bool&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$items</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, bool&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$items</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, bool&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, bool&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_ofClass">
-        ofClass()
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofClass" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">167</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Creates a new instance of a typed array of the specified class type.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">ofClass</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, object&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$items</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, object&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$class</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$items</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, object&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">phpstan-template</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>TClass</p>
-</section>
-
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">phpstan-param</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>class-string<TClass> $class</p>
-</section>
-
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">phpstan-return</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>TypedArray<TClass></p>
-</section>
-
-                                    </dd>
-                        </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, object&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_ofFloat">
-        ofFloat()
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofFloat" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_new">
+        new()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_new" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
@@ -885,30 +1033,19 @@
     <span class="phpdocumentor-element-found-in__line">88</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Creates a new instance of a typed array of the float type.</p>
+        <p class="phpdocumentor-summary">Creates a new instance of the typed array.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">ofFloat</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, float&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$items</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, float&gt;</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">new</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, mixed&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$items</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, float&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
+    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, float&gt;</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, mixed&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -927,13 +1064,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">263</span>
+    <span class="phpdocumentor-element-found-in__line">557</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">offsetExists</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                <span class="phpdocumentor-signature__name">offsetExists</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -941,7 +1078,7 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int|string|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -962,6 +1099,15 @@
                                                                                     <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/arrayaccess.offsetexists.php"><abbr title="https://www.php.net/manual/en/arrayaccess.offsetexists.php">https://www.php.net/manual/en/arrayaccess.offsetexists.php</abbr></a></span>
                                         
                                                  <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TKey $key</p>
+</section>
 
                                     </dd>
                         </dl>
@@ -986,13 +1132,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">275</span>
+    <span class="phpdocumentor-element-found-in__line">570</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">offsetGet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed|null</span></code>
+                <span class="phpdocumentor-signature__name">offsetGet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1000,7 +1146,7 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int|string|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -1024,18 +1170,27 @@
 
                                     </dd>
                                                 <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TKey $key</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">phpstan-return</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>T|null</p>
+                                                 <section class="phpdocumentor-description"><p>TValue|null</p>
 </section>
 
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed|null</span>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -1054,13 +1209,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">287</span>
+    <span class="phpdocumentor-element-found-in__line">583</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">offsetSet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$item</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">offsetSet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1068,14 +1223,14 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int|string|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$item</span>
+                <span class="phpdocumentor-signature__argument__name">$value</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -1104,7 +1259,16 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>T $item</p>
+                                                 <section class="phpdocumentor-description"><p>TKey   $key</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TValue $value</p>
 </section>
 
                                     </dd>
@@ -1130,13 +1294,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">320</span>
+    <span class="phpdocumentor-element-found-in__line">628</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">offsetUnset</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">offsetUnset</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1144,7 +1308,7 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int|string|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -1167,6 +1331,15 @@
                                                  <section class="phpdocumentor-description"></section>
 
                                     </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TKey $key</p>
+</section>
+
+                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -1180,42 +1353,46 @@
         class="phpdocumentor-element
             -method
             -public
-                                    -static                    "
+                                                        "
 >
-    <h4 class="phpdocumentor-element__name" id="method_ofInt">
-        ofInt()
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofInt" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_toArray">
+        toArray()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_toArray" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">546</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Creates a new instance of a typed array of the int type.</p>
+        <p class="phpdocumentor-summary">Gets the typed array of values as a plain array.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">ofInt</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, int&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$items</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, int&gt;</span></code>
+                <span class="phpdocumentor-signature__name">toArray</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int|string, mixed&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$items</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, int&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
     
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>array&lt;int|string, TValue&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, int&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;int|string, mixed&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -1225,23 +1402,259 @@
         class="phpdocumentor-element
             -method
             -public
-                                    -static                    "
+                                                        "
 >
-    <h4 class="phpdocumentor-element__name" id="method_ofInterface">
-        ofInterface()
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofInterface" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_withArrayValue">
+        withArrayValue()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withArrayValue" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">195</span>
+    <span class="phpdocumentor-element-found-in__line">323</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Creates a new instance of a typed array of the class type that implements the specified interface.</p>
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the array type value.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">ofInterface</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, object&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$items</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, object&gt;</span></code>
+                <span class="phpdocumentor-signature__name">withArrayValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, array&lt;int|string, mixed&gt;&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;TKey, array&lt;int|string, mixed&gt;&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, array&lt;int|string, mixed&gt;&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withBoolKey">
+        withBoolKey()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withBoolKey" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">105</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the bool type key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withBoolKey</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;bool, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;bool, TValue&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;bool, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withBoolValue">
+        withBoolValue()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withBoolValue" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">340</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the bool type value.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withBoolValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, bool&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;TKey, bool&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, bool&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withClassKey">
+        withClassKey()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withClassKey" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">236</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the specified class type key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withClassKey</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;object, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>If you are using an object as the key, it is recommended that you implement the equals()
+and hashCode() methods on the object to determine whether keys are equal or not.
+Otherwise, the === operator and spl_object_hash() function are used to determine it.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$class</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Ngmy-TypedArray-Tests-Data-Class7.html"><abbr title="\Ngmy\TypedArray\Tests\Data\Class7">Class7</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-template</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TClass</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>class-string<TClass> $class</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;TClass, TValue&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;object, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withClassValue">
+        withClassValue()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withClassValue" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">461</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the specified class type value.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withClassValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, object&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1253,14 +1666,6 @@
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$items</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, object&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
             </dd>
             </dl>
 
@@ -1293,14 +1698,14 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>TypedArray<TClass></p>
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;TKey, TClass&gt;</p>
 </section>
 
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, object&gt;</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, object&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -1310,42 +1715,261 @@
         class="phpdocumentor-element
             -method
             -public
-                                    -static                    "
+                                                        "
 >
-    <h4 class="phpdocumentor-element__name" id="method_ofObject">
-        ofObject()
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofObject" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_withFloatKey">
+        withFloatKey()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withFloatKey" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Creates a new instance of a typed array of the object type.</p>
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the float type key.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">ofObject</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, object&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$items</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, object&gt;</span></code>
+                <span class="phpdocumentor-signature__name">withFloatKey</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;float, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;float, TValue&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;float, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withFloatValue">
+        withFloatValue()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withFloatValue" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">357</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the float type value.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withFloatValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, float&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;TKey, float&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, float&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withInterfaceKey">
+        withInterfaceKey()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withInterfaceKey" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">268</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the class type key that implements the specified interface.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withInterfaceKey</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$interface</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;object, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>If you are using an object as the key, it is recommended that you implement the equals()
+and hashCode() methods on the object to determine whether keys are equal or not.
+Otherwise, the === operator and spl_object_hash() function are used to determine it.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$interface</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Ngmy-TypedArray-Tests-Data-Class7.html"><abbr title="\Ngmy\TypedArray\Tests\Data\Class7">Class7</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-template</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TInterface</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>class-string<TInterface> $interface</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;TInterface, TValue&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;object, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withInterfaceValue">
+        withInterfaceValue()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withInterfaceValue" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">488</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the class type value that implements the specified interface.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withInterfaceValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$interface</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, object&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$items</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, object&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$interface</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-template</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TInterface</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>class-string<TInterface> $interface</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;TKey, TInterface&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, object&gt;</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, object&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -1355,42 +1979,570 @@
         class="phpdocumentor-element
             -method
             -public
-                                    -static                    "
+                                                        "
 >
-    <h4 class="phpdocumentor-element__name" id="method_ofResource">
-        ofResource()
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofResource" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_withIntKey">
+        withIntKey()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withIntKey" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Creates a new instance of a typed array of the resource type.</p>
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the int type key.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">ofResource</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, resource&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$items</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, resource&gt;</span></code>
+                <span class="phpdocumentor-signature__name">withIntKey</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;int, mixed&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;int, TValue&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withIntValue">
+        withIntValue()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withIntValue" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">374</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the int type value.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withIntValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, int&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;TKey, int&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, int&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withMixedKey">
+        withMixedKey()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withMixedKey" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">156</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the mixed type key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withMixedKey</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;mixed, TValue&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withMixedValue">
+        withMixedValue()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withMixedValue" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">391</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the mixed type value.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withMixedValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;TKey, mixed&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withObjectKey">
+        withObjectKey()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withObjectKey" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">178</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the object type key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withObjectKey</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;object, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>If you are using an object as the key, it is recommended that you implement the equals()
+and hashCode() methods on the object to determine whether keys are equal or not.
+Otherwise, the === operator and spl_object_hash() function are used to determine it.</p>
+</section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Ngmy-TypedArray-Tests-Data-Class7.html"><abbr title="\Ngmy\TypedArray\Tests\Data\Class7">Class7</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;object, TValue&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;object, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withObjectValue">
+        withObjectValue()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withObjectValue" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">408</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the object type value.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withObjectValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, object&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;TKey, object&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, object&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withResourceKey">
+        withResourceKey()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withResourceKey" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">195</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the resource type key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withResourceKey</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;resource, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;resource, TValue&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;resource, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withResourceValue">
+        withResourceValue()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withResourceValue" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">425</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the resource type value.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withResourceValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, resource&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;TKey, resource&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, resource&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withStringKey">
+        withStringKey()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withStringKey" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">212</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the string type key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withStringKey</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;string, TValue&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withStringValue">
+        withStringValue()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withStringValue" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">442</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the string type value.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withStringValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;TKey, string&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withTraitKey">
+        withTraitKey()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withTraitKey" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">298</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the class type key that uses the specified trait.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">withTraitKey</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$trait</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;object, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>If you are using an object as the key, it is recommended that you implement the equals()
+and hashCode() methods on the object to determine whether keys are equal or not.
+Otherwise, the === operator and spl_object_hash() function are used to determine it.</p>
+</section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$items</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, resource&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$trait</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/Ngmy-TypedArray-Tests-Data-Class7.html"><abbr title="\Ngmy\TypedArray\Tests\Data\Class7">Class7</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>class-string $trait</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, resource&gt;</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;object, mixed&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -1400,68 +2552,23 @@
         class="phpdocumentor-element
             -method
             -public
-                                    -static                    "
+                                                        "
 >
-    <h4 class="phpdocumentor-element__name" id="method_ofString">
-        ofString()
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofString" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_withTraitValue">
+        withTraitValue()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withTraitValue" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">513</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Creates a new instance of a typed array of the string type.</p>
+        <p class="phpdocumentor-summary">Returns a new instance of the typed array with the class type value that uses the specified trait.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">ofString</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$items</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, string&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$items</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, string&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, string&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_ofTrait">
-        ofTrait()
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_ofTrait" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">221</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Creates a new instance of a typed array of the class type that uses the specified trait.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">ofTrait</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$trait</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, object&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$items</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, object&gt;</span></code>
+                <span class="phpdocumentor-signature__name">withTraitValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$trait</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, object&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1473,14 +2580,6 @@
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$items</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int|string, object&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
             </dd>
             </dl>
 
@@ -1502,56 +2601,7 @@
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;string|int, object&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_toArray">
-        toArray()
-        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_toArray" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">254</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Gets the typed array of items as a plain array.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">toArray</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int|string, mixed&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">phpstan-return</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>array&lt;int|string, T&gt;</p>
-</section>
-
-                                    </dd>
-                        </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;int|string, mixed&gt;</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;mixed, object&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -1570,20 +2620,41 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">344</span>
+    <span class="phpdocumentor-element-found-in__line">654</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keyType</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keyClassKind</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$valueType</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$valueClassKind</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$type</span>
+                <span class="phpdocumentor-signature__argument__name">$keyType</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$keyClassKind</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$valueType</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$valueClassKind</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1594,6 +2665,65 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getKeyHashCode">
+        getKeyHashCode()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_getKeyHashCode" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">672</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">getKeyHashCode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|string|null</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TKey $key</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int|string|null</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 

@@ -8,7 +8,7 @@ use Exception;
 use InvalidArgumentException;
 use Ngmy\TypedArray\TypedArray;
 
-class TraitArrayTest extends TypedArrayTest
+class TypedArrayTraitValueTest extends TypedArrayPrimitiveValueTest
 {
     /**
      * @return array<int|string, array<int|string, mixed>>
@@ -62,27 +62,24 @@ class TraitArrayTest extends TypedArrayTest
     }
 
     /**
-     * @param array<int|string, mixed>|null $items
+     * @param list<mixed>|null $values
      * @dataProvider dataProvider
      *
      * @phpstan-template T
-     * @phpstan-param class-string<T> $type
+     * @phpstan-param class-string<T> $valueType
      */
-    public function test(string $type, ?array $items, Exception $exception = null): void
+    public function test(string $valueType, ?array $values, Exception $exception = null): void
     {
-        parent::test($type, $items, $exception);
+        parent::test($valueType, $values, $exception);
     }
 
     /**
-     * @param array<int|string, mixed>|null $items
-     * @return TypedArray<mixed>
+     * @return TypedArray<mixed, mixed>
      *
-     * @phpstan-param class-string $type
+     * @phpstan-param class-string $valueType
      */
-    protected function createInstance(string $type, array $items = null): TypedArray
+    protected function createInstance(string $valueType): TypedArray
     {
-        return \is_null($items)
-            ? TypedArray::ofTrait($type)
-            : TypedArray::ofTrait($type, $items);
+        return TypedArray::new()->withTraitValue($valueType);
     }
 }
