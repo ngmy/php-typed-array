@@ -8,7 +8,7 @@ use Exception;
 use InvalidArgumentException;
 use Ngmy\TypedArray\TypedArray;
 
-class TypedArrayTest extends TestCase
+class TypedArrayPrimitiveValueTest extends TestCase
 {
     /**
      * @return array<int|string, array<int|string, mixed>>
@@ -53,6 +53,10 @@ class TypedArrayTest extends TestCase
                 new InvalidArgumentException(),
             ],
             [
+                'mixed',
+                [[], true, 0.0, 0, new Data\Class1(), \tmpfile(), ''],
+            ],
+            [
                 'object',
                 [new Data\Class1(), new Data\Class2()],
             ],
@@ -83,23 +87,23 @@ class TypedArrayTest extends TestCase
     }
 
     /**
-     * @param array<int|string, mixed>|null $items
+     * @param list<mixed>|null $values
      * @dataProvider dataProvider
      */
-    public function test(string $type, ?array $items, Exception $exception = null): void
+    public function test(string $valueType, ?array $values, Exception $exception = null): void
     {
         if ($exception instanceof Exception) {
             $this->expectException(\get_class($exception));
         }
 
-        \assert(\is_array($items));
+        \assert(\is_array($values));
 
         // Test instantiation
-        $typedArray = $this->createInstance($type);
+        $typedArray = $this->createInstance($valueType);
 
         // Test setting the value without the offset
-        foreach ($items as $item) {
-            $typedArray[] = $item;
+        foreach ($values as $key => $value) {
+            $typedArray[$key] = $value;
         }
 
         // Test calling the __clone() method
@@ -107,22 +111,22 @@ class TypedArrayTest extends TestCase
         $this->assertEquals($typedArray, $clonedTypedArray);
 
         // Test getting the value
-        foreach ($typedArray as $key => $item) {
-            $this->assertSame($items[$key], $item);
-            $this->assertSame($items[$key], $typedArray[$key]);
+        foreach ($typedArray as $key => $value) {
+            $this->assertSame($values[$key], $value);
+            $this->assertSame($values[$key], $typedArray[$key]);
         }
 
         // Test calling the count() function
-        $this->assertSame(\count($items), \count($typedArray));
+        $this->assertSame(\count($values), \count($typedArray));
 
         // Test calling the toArray() method
-        $this->assertSame($items, $typedArray->toArray());
+        $this->assertSame($values, $typedArray->toArray());
 
         // Test calling the iterator_to_array() function
-        $this->assertSame($items, \iterator_to_array($typedArray));
+        $this->assertSame($values, \iterator_to_array($typedArray));
 
         // Test calling the unset(), isset() and empty() functions
-        foreach ($typedArray as $key => $item) {
+        foreach ($typedArray as $key => $value) {
             unset($typedArray[$key]);
             $this->assertFalse(isset($typedArray[$key]));
             $this->assertTrue(empty($typedArray[$key]));
@@ -132,25 +136,19 @@ class TypedArrayTest extends TestCase
         $this->assertTrue($typedArray->isEmpty());
 
         // Test setting the value with the offset
-        foreach ($items as $key => $item) {
-            $typedArray[$key] = $item;
+        $typedArray = $this->createInstance($valueType);
+        foreach ($values as $value) {
+            $typedArray[] = $value;
         }
-        $this->assertEquals($clonedTypedArray, $typedArray);
-
-        // Test instantiation with items
-        $typedArray = $this->createInstance($type, $items);
         $this->assertEquals($clonedTypedArray, $typedArray);
     }
 
     /**
-     * @param array<int|string, mixed>|null $items
-     * @return TypedArray<mixed>
+     * @return TypedArray<mixed, mixed>
      */
-    protected function createInstance(string $type, array $items = null): TypedArray
+    protected function createInstance(string $valueType): TypedArray
     {
-        $factory = 'of' . \ucwords(\strtolower($type));
-        return \is_null($items)
-            ? TypedArray::$factory()
-            : TypedArray::$factory($items);
+        $withPrimitiveValue = 'with' . \ucwords(\strtolower($valueType)) . 'Value';
+        return TypedArray::new()->$withPrimitiveValue();
     }
 }

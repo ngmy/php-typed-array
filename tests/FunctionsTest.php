@@ -9,7 +9,7 @@ use Ngmy\TypedArray;
 class FunctionsTest extends TestCase
 {
     /**
-     * @return array<mixed, array<mixed, mixed>>
+     * @return array<int|string, array<int|string, mixed>>
      */
     public function classUsesRecursiveProvider(): array
     {
@@ -62,7 +62,7 @@ class FunctionsTest extends TestCase
     }
 
     /**
-     * @return array<mixed, array<mixed, mixed>>
+     * @return array<int|string, array<int|string, mixed>>
      */
     public function traitUsesRecursiveProvider(): array
     {

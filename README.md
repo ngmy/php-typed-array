@@ -10,19 +10,22 @@
 
 PHP Typed Array is the typed array for PHP.
 
-- Can create the typed array of the array, bool, float, int, object, resource, or string type, or the specified class type, or the class type that implements the specified interface, or the class type that uses the specified trait
+- Can create the typed array with the specified key and value type
+- Can specify the bool, float, int, object, resource, or string type, or the specified class type, or the class type that implements the specified interface, or the class type that uses the specified trait for the key type
+- Can specify the array, bool, float, int, object, resource, or string type, or the specified class type, or the class type that implements the specified interface, or the class type that uses the specified trait for the value type
 - Implements the `ArrayAccess`, `Countable`, and `IteratorAggregate` interfaces
 - Supports the static analysis like PHPStan
 
 ```php
-// Creates a new instance of a typed array of the int type
-$intArray = Ngmy\TypedArray\TypedArray::ofInt();
+// Returns a new instance of the typed array with the int type value
+$intArray = Ngmy\TypedArray\TypedArray::new()->withIntValue(); // TypedArray<mixed, int>
 
 $intArray[] = 1;      // Good
 // $intArray[] = '2'; // No good. The InvalidArgumentException exception is thrown
 
-// Creates a new instance of a typed array of the class type that implements the DateTimeInterface interface
-$dateTimeInterfaceArray = Ngmy\TypedArray\TypedArray::ofInterface(DateTimeInterface::class);
+// Returns a new instance of the typed array with the class type value that implements the DateTimeInterface interface
+$dateTimeInterfaceArray = Ngmy\TypedArray\TypedArray::new()
+    ->withInterfaceValue(DateTimeInterface::class); // TypedArray<mixed, DateTimeInterface>
 
 $dateTimeInterfaceArray[] = new DateTime();          // Good
 $dateTimeInterfaceArray[] = new DateTimeImmutable(); // Good
@@ -44,6 +47,14 @@ print_r($dateTimeInterfaceArray->toArray());
 //     [1] => DateTimeImmutable Object
 //         ...
 // )
+
+// You can also specify the type of the key
+$stringKeyArray = Ngmy\TypedArray\TypedArray::new()->withStringKey(); // TypedArray<string, mixed>
+$stringKeyArray['foo'] = 1; // Good
+// $stringKeyArray[] = 2;   // No good. The InvalidArgumentException exception is thrown
+
+// Of course, you can also specify the type of both the key and the value
+$intStringArray = Ngmy\TypedArray\TypedArray::new()->withIntKey()->withStringValue(); // TypedArray<int, string>
 ```
 
 ## Requirements
