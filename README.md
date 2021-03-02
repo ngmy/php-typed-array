@@ -14,7 +14,7 @@ PHP Typed Array is the typed array for PHP.
 - Can specify the bool, float, int, object, resource, or string type, or the specified class type, or the class type that implements the specified interface, or the class type that uses the specified trait for the key type
 - Can specify the array, bool, float, int, object, resource, or string type, or the specified class type, or the class type that implements the specified interface, or the class type that uses the specified trait for the value type
 - Implements the `ArrayAccess`, `Countable`, and `IteratorAggregate` interfaces
-- Supports the static analysis like PHPStan
+- Supports the static analysis like PHPStan. Please see [examples](docs/examples)
 
 ```php
 // Returns a new instance of the typed array with the int type value
