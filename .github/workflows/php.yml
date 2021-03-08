@@ -13,26 +13,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Install PHIVE
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 10
-          max_attempts: 3
-          command: |
-            wget -O phive.phar https://phar.io/releases/phive.phar
-            wget -O phive.phar.asc https://phar.io/releases/phive.phar.asc
-            gpg --keyserver pool.sks-keyservers.net --recv-keys 0x9D8A98B29B2D5D79
-            gpg --verify phive.phar.asc phive.phar
-
       - name: Install tools
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 10
-          max_attempts: 3
-          command: |
-            php phive.phar --no-progress install \
-              --copy \
-              --trust-gpg-keys E82B2FB314E9906E,31C7E470E2138192,6DA3ACC4991FFAE5,CF1A108D0E7AE720,4AA394086372C20A
+        uses: ngmy/phive-install-action@master
 
       - name: Upload tools to artifact store
         uses: actions/upload-artifact@master
