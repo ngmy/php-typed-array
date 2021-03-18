@@ -412,7 +412,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Ngmy-TypedArray-TypedArray.html#method_withIntKey">withIntKey()</a>
     <span>
-                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;int, mixed&gt;    </span>
+                        &nbsp;: <a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;int|null, mixed&gt;    </span>
 </dt>
 <dd>Returns a new instance of the typed array with the int type key.</dd>
 
@@ -891,7 +891,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">638</span>
+    <span class="phpdocumentor-element-found-in__line">635</span>
 </aside>
 
     
@@ -939,7 +939,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">649</span>
+    <span class="phpdocumentor-element-found-in__line">646</span>
 </aside>
 
     
@@ -1064,7 +1064,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">557</span>
+    <span class="phpdocumentor-element-found-in__line">555</span>
 </aside>
 
     
@@ -1101,15 +1101,6 @@
                                                  <section class="phpdocumentor-description"></section>
 
                                     </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">phpstan-param</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>TKey $key</p>
-</section>
-
-                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -1132,7 +1123,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">570</span>
+    <span class="phpdocumentor-element-found-in__line">567</span>
 </aside>
 
     
@@ -1170,15 +1161,6 @@
 
                                     </dd>
                                                 <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">phpstan-param</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>TKey $key</p>
-</section>
-
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">phpstan-return</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -1209,7 +1191,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">583</span>
+    <span class="phpdocumentor-element-found-in__line">580</span>
 </aside>
 
     
@@ -1294,7 +1276,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">628</span>
+    <span class="phpdocumentor-element-found-in__line">623</span>
 </aside>
 
     
@@ -1329,15 +1311,6 @@
                                                                                     <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/arrayaccess.offsetunset.php"><abbr title="https://www.php.net/manual/en/arrayaccess.offsetunset.php">https://www.php.net/manual/en/arrayaccess.offsetunset.php</abbr></a></span>
                                         
                                                  <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">phpstan-param</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>TKey $key</p>
-</section>
 
                                     </dd>
                         </dl>
@@ -1995,7 +1968,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">withIntKey</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;int, mixed&gt;</span></code>
+                <span class="phpdocumentor-signature__name">withIntKey</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;int|null, mixed&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -2011,14 +1984,14 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;int, TValue&gt;</p>
+                                                 <section class="phpdocumentor-description"><p>TypedArray&lt;int|null, TValue&gt;</p>
 </section>
 
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Ngmy-TypedArray-TypedArray.html"><abbr title="\Ngmy\TypedArray\TypedArray">TypedArray</abbr></a>&lt;int|null, mixed&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -2620,7 +2593,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">654</span>
+    <span class="phpdocumentor-element-found-in__line">651</span>
 </aside>
 
     
@@ -2683,7 +2656,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">672</span>
+    <span class="phpdocumentor-element-found-in__line">667</span>
 </aside>
 
     
@@ -2706,21 +2679,6 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">phpstan-param</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>TKey $key</p>
-</section>
-
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int|string|null</span>
