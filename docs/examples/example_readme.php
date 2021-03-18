@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 // Returns a new instance of the typed array with the int type value
 $intArray = Ngmy\TypedArray\TypedArray::new()->withIntValue(); // TypedArray<mixed, int>

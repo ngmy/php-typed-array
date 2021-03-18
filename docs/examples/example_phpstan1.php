@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 $arrayArray = Ngmy\TypedArray\TypedArray::new()->withArrayValue();
 $arrayArray[] = [];   // Good
@@ -53,4 +53,10 @@ $dateTimeInterfaceArray[] = null;                    // No good
 $Trait1Array = Ngmy\TypedArray\TypedArray::new()->withTraitValue(Ngmy\TypedArray\Tests\Data\Trait1::class);
 $Trait1Array[] = new Ngmy\TypedArray\Tests\Data\Class3(); // Good
 $Trait1Array[] = new Ngmy\TypedArray\Tests\Data\Class1(); // Good. This is the false negative
-$Trait1Array[] = null;                                    // No Good
+$Trait1Array[] = null;                                    // No good
+
+$intKeyArray = Ngmy\TypedArray\TypedArray::new()->withIntKey();
+$intKeyArray[0] = 0;   // Good
+$intKeyArray[-1] = -1; // Good
+$intKeyArray[] = 1;    // Good
+$intKeyArray['1'] = 1; // No good

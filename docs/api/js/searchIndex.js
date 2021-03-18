@@ -426,6 +426,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Ngmy-TypedArray-Tests-TypedArrayInterfaceValueTest.html#method_createInstance"
         },                {
+            "fqsen": "\\Ngmy\\TypedArray\\Tests\\TypedArrayIntKeyTest",
+            "name": "TypedArrayIntKeyTest",
+            "summary": "",
+            "url": "classes/Ngmy-TypedArray-Tests-TypedArrayIntKeyTest.html"
+        },                {
+            "fqsen": "\\Ngmy\\TypedArray\\Tests\\TypedArrayIntKeyTest\u003A\u003AtestAssignValue\u0028\u0029",
+            "name": "testAssignValue",
+            "summary": "",
+            "url": "classes/Ngmy-TypedArray-Tests-TypedArrayIntKeyTest.html#method_testAssignValue"
+        },                {
             "fqsen": "\\Ngmy\\TypedArray\\Tests\\TypedArrayPrimitiveKeyTest",
             "name": "TypedArrayPrimitiveKeyTest",
             "summary": "",
