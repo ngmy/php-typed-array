@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 PHPStan\dumpType(Ngmy\TypedArray\TypedArray::new());                      // Ngmy\TypedArray\TypedArray<mixed, mixed>
 PHPStan\dumpType(Ngmy\TypedArray\TypedArray::new()->withBoolKey());       // Ngmy\TypedArray\TypedArray<bool, mixed>
