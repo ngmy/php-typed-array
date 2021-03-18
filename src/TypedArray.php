@@ -132,9 +132,9 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * Returns a new instance of the typed array with the int type key.
      *
-     * @return TypedArray<int, mixed>
+     * @return TypedArray<int|null, mixed>
      *
-     * @phpstan-return TypedArray<int, TValue>
+     * @phpstan-return TypedArray<int|null, TValue>
      */
     public function withIntKey(): self
     {
@@ -551,8 +551,6 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * @param mixed $key
      * @see https://www.php.net/manual/en/arrayaccess.offsetexists.php
-     *
-     * @phpstan-param TKey $key
      */
     public function offsetExists($key): bool
     {
@@ -564,7 +562,6 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return mixed
      * @see https://www.php.net/manual/en/arrayaccess.offsetget.php
      *
-     * @phpstan-param TKey $key
      * @phpstan-return TValue|null
      */
     public function offsetGet($key)
@@ -622,8 +619,6 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * @param mixed $key
      * @see https://www.php.net/manual/en/arrayaccess.offsetunset.php
-     *
-     * @phpstan-param TKey $key
      */
     public function offsetUnset($key): void
     {
@@ -666,8 +661,6 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * @param mixed $key
      * @return int|string|null
-     *
-     * @phpstan-param TKey $key
      */
     private function getKeyHashCode($key)
     {
