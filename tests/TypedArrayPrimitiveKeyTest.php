@@ -181,6 +181,12 @@ class TypedArrayPrimitiveKeyTest extends TestCase
         }
 
         $this->assertEquals($expected, \array_values($typedArray->toArray()));
+
+        foreach ($keys as $key) {
+            unset($typedArray[$key]);
+            $this->assertFalse(isset($typedArray[$key]));
+            $this->assertTrue(empty($typedArray[$key]));
+        }
     }
 
     /**
