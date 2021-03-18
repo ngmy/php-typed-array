@@ -624,7 +624,9 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     {
         $keyHashCode = $this->getKeyHashCode($key);
         unset($this->values[$keyHashCode]);
-        unset($this->keys[$keyHashCode]);
+        if ($this->keyType == self::KEY_TYPES['object'] || !\is_null($this->keyClassKind)) {
+            unset($this->keys[$keyHashCode]);
+        }
     }
 
     /**
