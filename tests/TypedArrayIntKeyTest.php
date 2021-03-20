@@ -6,6 +6,9 @@ namespace Ngmy\TypedArray\Tests;
 
 use Ngmy\TypedArray\TypedArray;
 
+/**
+ * @group key
+ */
 class TypedArrayIntKeyTest extends TestCase
 {
     public function testAssignValue(): void

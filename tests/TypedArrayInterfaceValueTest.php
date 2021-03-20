@@ -8,6 +8,9 @@ use Exception;
 use InvalidArgumentException;
 use Ngmy\TypedArray\TypedArray;
 
+/**
+ * @group value
+ */
 class TypedArrayInterfaceValueTest extends TypedArrayPrimitiveValueTest
 {
     /**
