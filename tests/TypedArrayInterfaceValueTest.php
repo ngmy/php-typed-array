@@ -56,7 +56,8 @@ class TypedArrayInterfaceValueTest extends TypedArrayPrimitiveValueTest
      * @dataProvider dataProvider
      *
      * @phpstan-template T
-     * @phpstan-param class-string<T> $valueType
+     * @phpstan-param class-string<T>  $valueType
+     * @phpstan-param list<mixed>|null $values
      */
     public function test(string $valueType, ?array $values, Exception $exception = null): void
     {
