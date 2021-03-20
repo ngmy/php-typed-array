@@ -109,9 +109,12 @@ class TypedArrayClassKeyTest extends TypedArrayPrimitiveKeyTest
     }
 
     /**
-     * @param list<mixed>                $keys
-     * @param Exception|list<mixed>|null $expected
+     * @param array<int, mixed>                $keys
+     * @param array<int, mixed>|Exception|null $expected
      * @dataProvider dataProvider
+     *
+     * @phpstan-param list<mixed>                $keys
+     * @phpstan-param Exception|list<mixed>|null $expected
      */
     public function test(string $keyType, ?array $keys, $expected): void
     {

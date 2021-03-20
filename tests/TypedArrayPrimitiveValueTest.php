@@ -90,8 +90,10 @@ class TypedArrayPrimitiveValueTest extends TestCase
     }
 
     /**
-     * @param list<mixed>|null $values
+     * @param array<int, mixed>|null $values
      * @dataProvider dataProvider
+     *
+     * @phpstan-param list<mixed>|null $values
      */
     public function test(string $valueType, ?array $values, Exception $exception = null): void
     {
