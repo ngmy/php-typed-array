@@ -725,11 +725,13 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     private function keyExists($key, $keyHashCode): bool
     {
-        if (\is_object($key) && isset($this->keys[$keyHashCode])) {
-            return \method_exists($key, 'equals')
-                ? $key->equals($this->keys[$keyHashCode])
-                : $key === $this->keys[$keyHashCode];
+        if (!\is_object($key)) {
+            return true;
         }
-        return true;
+        return isset($this->keys[$keyHashCode]) && (
+            \method_exists($key, 'equals')
+                ? $key->equals($this->keys[$keyHashCode])
+                : $key === $this->keys[$keyHashCode]
+        );
     }
 }
