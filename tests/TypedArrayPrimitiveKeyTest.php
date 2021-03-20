@@ -189,6 +189,7 @@ class TypedArrayPrimitiveKeyTest extends TestCase
             unset($typedArray[$key]);
             $this->assertFalse(isset($typedArray[$key]));
             $this->assertTrue(empty($typedArray[$key]));
+            $this->assertNull($typedArray[$key]);
         }
     }
 
