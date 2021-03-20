@@ -166,6 +166,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#method_getKeyHashCode"
         },                {
+            "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AkeyExists\u0028\u0029",
+            "name": "keyExists",
+            "summary": "",
+            "url": "classes/Ngmy-TypedArray-TypedArray.html#method_keyExists"
+        },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003AKEY_TYPES",
             "name": "KEY_TYPES",
             "summary": "",
@@ -208,12 +213,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003A\u0024keys",
             "name": "keys",
-            "summary": "",
+            "summary": "The\u0020hash\u0020map\u0020of\u0020key\u0027s\u0020hash\u0020codes\u0020and\u0020keys.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#property_keys"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\TypedArray\u003A\u003A\u0024values",
             "name": "values",
-            "summary": "",
+            "summary": "The\u0020hash\u0020map\u0020of\u0020key\u0027s\u0020hash\u0020codes\u0020and\u0020values.",
             "url": "classes/Ngmy-TypedArray-TypedArray.html#property_values"
         },                {
             "fqsen": "\\Ngmy\\TypedArray\\Tests\\Data\\AbstractClass1",

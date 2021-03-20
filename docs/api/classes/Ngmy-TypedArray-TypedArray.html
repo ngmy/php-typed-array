@@ -253,7 +253,7 @@
     <span>
                 &nbsp;: array&lt;int|string, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>The hash map of key&#039;s hash codes and keys.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Ngmy-TypedArray-TypedArray.html#property_keyType">$keyType</a>
@@ -274,7 +274,7 @@
     <span>
                 &nbsp;: array&lt;int|string, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>The hash map of key&#039;s hash codes and values.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/Ngmy-TypedArray-TypedArray.html#property_valueType">$valueType</a>
@@ -507,6 +507,13 @@
 </dt>
 <dd></dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/Ngmy-TypedArray-TypedArray.html#method_keyExists">keyExists()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd></dd>
+
         </dl>
 
 
@@ -672,17 +679,19 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">The hash map of key&#039;s hash codes and keys.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;int|string, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$keys</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>This is only used when the key type is the object, class, interface, or trait type.</p>
+</section>
 
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -795,10 +804,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">The hash map of key&#039;s hash codes and values.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;int|string, mixed&gt;</span>
@@ -891,7 +901,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">635</span>
+    <span class="phpdocumentor-element-found-in__line">648</span>
 </aside>
 
     
@@ -939,7 +949,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">646</span>
+    <span class="phpdocumentor-element-found-in__line">659</span>
 </aside>
 
     
@@ -996,7 +1006,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">534</span>
+    <span class="phpdocumentor-element-found-in__line">539</span>
 </aside>
 
         <p class="phpdocumentor-summary">Determines if the typed array is empty or not.</p>
@@ -1030,7 +1040,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creates a new instance of the typed array.</p>
@@ -1064,7 +1074,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">555</span>
+    <span class="phpdocumentor-element-found-in__line">560</span>
 </aside>
 
     
@@ -1123,7 +1133,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">567</span>
+    <span class="phpdocumentor-element-found-in__line">573</span>
 </aside>
 
     
@@ -1191,7 +1201,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">580</span>
+    <span class="phpdocumentor-element-found-in__line">590</span>
 </aside>
 
     
@@ -1276,7 +1286,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">623</span>
+    <span class="phpdocumentor-element-found-in__line">633</span>
 </aside>
 
     
@@ -1335,7 +1345,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">546</span>
+    <span class="phpdocumentor-element-found-in__line">551</span>
 </aside>
 
         <p class="phpdocumentor-summary">Gets the typed array of values as a plain array.</p>
@@ -1384,7 +1394,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">323</span>
+    <span class="phpdocumentor-element-found-in__line">328</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the array type value.</p>
@@ -1433,7 +1443,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">110</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the bool type key.</p>
@@ -1482,7 +1492,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">340</span>
+    <span class="phpdocumentor-element-found-in__line">345</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the bool type value.</p>
@@ -1531,7 +1541,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">241</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the specified class type key.</p>
@@ -1620,7 +1630,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">461</span>
+    <span class="phpdocumentor-element-found-in__line">466</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the specified class type value.</p>
@@ -1697,7 +1707,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">127</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the float type key.</p>
@@ -1746,7 +1756,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">357</span>
+    <span class="phpdocumentor-element-found-in__line">362</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the float type value.</p>
@@ -1795,7 +1805,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">268</span>
+    <span class="phpdocumentor-element-found-in__line">273</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the class type key that implements the specified interface.</p>
@@ -1884,7 +1894,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">488</span>
+    <span class="phpdocumentor-element-found-in__line">493</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the class type value that implements the specified interface.</p>
@@ -1961,7 +1971,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">139</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the int type key.</p>
@@ -2010,7 +2020,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">374</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the int type value.</p>
@@ -2059,7 +2069,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">161</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the mixed type key.</p>
@@ -2108,7 +2118,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">391</span>
+    <span class="phpdocumentor-element-found-in__line">396</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the mixed type value.</p>
@@ -2157,7 +2167,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">178</span>
+    <span class="phpdocumentor-element-found-in__line">183</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the object type key.</p>
@@ -2218,7 +2228,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">408</span>
+    <span class="phpdocumentor-element-found-in__line">413</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the object type value.</p>
@@ -2267,7 +2277,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">195</span>
+    <span class="phpdocumentor-element-found-in__line">200</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the resource type key.</p>
@@ -2316,7 +2326,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">425</span>
+    <span class="phpdocumentor-element-found-in__line">430</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the resource type value.</p>
@@ -2365,7 +2375,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">212</span>
+    <span class="phpdocumentor-element-found-in__line">217</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the string type key.</p>
@@ -2414,7 +2424,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">442</span>
+    <span class="phpdocumentor-element-found-in__line">447</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the string type value.</p>
@@ -2463,7 +2473,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">298</span>
+    <span class="phpdocumentor-element-found-in__line">303</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the class type key that uses the specified trait.</p>
@@ -2534,7 +2544,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">513</span>
+    <span class="phpdocumentor-element-found-in__line">518</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns a new instance of the typed array with the class type value that uses the specified trait.</p>
@@ -2593,7 +2603,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">651</span>
+    <span class="phpdocumentor-element-found-in__line">664</span>
 </aside>
 
     
@@ -2656,7 +2666,7 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">667</span>
+    <span class="phpdocumentor-element-found-in__line">680</span>
 </aside>
 
     
@@ -2682,6 +2692,58 @@ Otherwise, the === operator and spl_object_hash() function are used to determine
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int|string|null</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_keyExists">
+        keyExists()
+        <a href="classes/Ngmy-TypedArray-TypedArray.html#method_keyExists" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/TypedArray.php"><a href="files/src-typedarray.html"><abbr title="src/TypedArray.php">TypedArray.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">726</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">keyExists</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keyHashCode</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$keyHashCode</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int|string|null</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 

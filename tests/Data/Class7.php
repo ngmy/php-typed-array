@@ -17,7 +17,10 @@ class Class7
         $this->name = $name;
     }
 
-    public function equals(object $other): bool
+    /**
+     * @param mixed $other
+     */
+    public function equals($other): bool
     {
         if ($other instanceof self) {
             return $other->id == $this->id;

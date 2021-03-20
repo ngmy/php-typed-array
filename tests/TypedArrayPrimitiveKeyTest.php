@@ -8,6 +8,9 @@ use Exception;
 use InvalidArgumentException;
 use Ngmy\TypedArray\TypedArray;
 
+/**
+ * @group key
+ */
 class TypedArrayPrimitiveKeyTest extends TestCase
 {
     /**
@@ -186,6 +189,7 @@ class TypedArrayPrimitiveKeyTest extends TestCase
             unset($typedArray[$key]);
             $this->assertFalse(isset($typedArray[$key]));
             $this->assertTrue(empty($typedArray[$key]));
+            $this->assertNull($typedArray[$key]);
         }
     }
 
