@@ -559,7 +559,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     public function offsetExists($key): bool
     {
-        return isset($this->values[$this->getKeyHashCode($key)]);
+        $keyHashCode = $this->getKeyHashCode($key);
+        return $this->keyExists($key, $keyHashCode) && isset($this->values[$keyHashCode]);
     }
 
     /**
@@ -571,7 +572,11 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     public function offsetGet($key)
     {
-        return $this->values[$this->getKeyHashCode($key)] ?? null;
+        $keyHashCode = $this->getKeyHashCode($key);
+        if (!$this->keyExists($key, $keyHashCode)) {
+            return;
+        }
+        return $this->values[$keyHashCode] ?? null;
     }
 
     /**
@@ -615,7 +620,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
             $this->values[] = $value;
         } else {
             $this->values[$keyHashCode] = $value;
-            if ($this->keyType == self::KEY_TYPES['object'] || !\is_null($this->keyClassKind)) {
+            if (\is_object($key)) {
                 $this->keys[$keyHashCode] = $key;
             }
         }
@@ -628,8 +633,11 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     public function offsetUnset($key): void
     {
         $keyHashCode = $this->getKeyHashCode($key);
+        if (!$this->keyExists($key, $keyHashCode)) {
+            return;
+        }
         unset($this->values[$keyHashCode]);
-        if ($this->keyType == self::KEY_TYPES['object'] || !\is_null($this->keyClassKind)) {
+        if (\is_object($key)) {
             unset($this->keys[$keyHashCode]);
         }
     }
@@ -709,5 +717,19 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
             return \method_exists($key, 'hashCode') ? $key->hashCode() : \spl_object_hash($key);
         }
         return (string) $key;
+    }
+
+    /**
+     * @param mixed           $key
+     * @param int|string|null $keyHashCode
+     */
+    private function keyExists($key, $keyHashCode): bool
+    {
+        if (\is_object($key) && isset($this->keys[$keyHashCode])) {
+            return \method_exists($key, 'equals')
+                ? $key->equals($this->keys[$keyHashCode])
+                : $key === $this->keys[$keyHashCode];
+        }
+        return true;
     }
 }
