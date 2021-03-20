@@ -90,7 +90,7 @@ class TypedArrayPrimitiveValueTest extends TestCase
     }
 
     /**
-     * @param array<int, mixed>|null $values
+     * @param list<mixed>|null $values
      * @dataProvider dataProvider
      */
     public function test(string $valueType, ?array $values, Exception $exception = null): void

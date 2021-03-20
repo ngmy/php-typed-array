@@ -68,8 +68,8 @@ class TypedArrayTraitKeyTest extends TypedArrayPrimitiveKeyTest
     }
 
     /**
-     * @param array<int, mixed>                $keys
-     * @param array<int, mixed>|Exception|null $expected
+     * @param list<mixed>                $keys
+     * @param Exception|list<mixed>|null $expected
      * @dataProvider dataProvider
      */
     public function test(string $keyType, ?array $keys, $expected): void
