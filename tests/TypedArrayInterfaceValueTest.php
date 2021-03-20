@@ -52,7 +52,7 @@ class TypedArrayInterfaceValueTest extends TypedArrayPrimitiveValueTest
     }
 
     /**
-     * @param list<mixed>|null $values
+     * @param array<int, mixed>|null $values
      * @dataProvider dataProvider
      *
      * @phpstan-template T
