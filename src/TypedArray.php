@@ -70,11 +70,16 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /** @var string|null */
     private $valueClassKind;
     /**
+     * The hash map of key's hash codes and keys.
+     * This is only used when the key type is the object, class, interface, or trait type.
+     *
      * @var array<int|string, mixed>
      * @phpstan-var array<int|string, TKey>
      */
     private $keys = [];
     /**
+     * The hash map of key's hash codes and values.
+     *
      * @var array<int|string, mixed>
      * @phpstan-var array<int|string, TValue>
      */
