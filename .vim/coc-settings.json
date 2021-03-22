@@ -1,14 +1,10 @@
 {
-    "diagnostic-languageserver.mergeConfig": true,
     "diagnostic-languageserver.linters": {
-        "ngmy.php-library.lint": {
+        "ngmy.laradock.composer.lint": {
             "args": ["exec", "laradock-ngmy-php-typed-array_workspace_1", "composer", "lint", "--", "--report=emacs"]
         },
-        "ngmy.php-library.findbugs": {
+        "ngmy.laradock.composer.findbugs": {
             "args": ["exec", "laradock-ngmy-php-typed-array_workspace_1", "composer", "findbugs", "--", "--error-format", "raw", "--no-progress"]
         }
-    },
-    "diagnostic-languageserver.filetypes": {
-        "php": ["ngmy.php-library.lint", "ngmy.php-library.findbugs"]
     }
 }
