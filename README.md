@@ -7,6 +7,7 @@
 [![PHP CI](https://github.com/ngmy/php-typed-array/actions/workflows/php.yml/badge.svg)](https://github.com/ngmy/php-typed-array/actions/workflows/php.yml)
 [![Coverage Status](https://coveralls.io/repos/github/ngmy/php-typed-array/badge.svg?branch=master)](https://coveralls.io/github/ngmy/php-typed-array?branch=master)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
+[![Psalm Enabled](https://img.shields.io/badge/Psalm-enabled-brightgreen.svg?style=flat)](https://psalm.dev/)
 
 PHP Typed Array is the typed array for PHP.
 
@@ -14,7 +15,7 @@ PHP Typed Array is the typed array for PHP.
 - Can specify the bool, float, int, object, resource, or string type, or the specified class type, or the class type that implements the specified interface, or the class type that uses the specified trait for the key type
 - Can specify the array, bool, float, int, object, resource, or string type, or the specified class type, or the class type that implements the specified interface, or the class type that uses the specified trait for the value type
 - Implements the `ArrayAccess`, `Countable`, and `IteratorAggregate` interfaces
-- Supports the static analysis like PHPStan. Please see [examples](docs/examples)
+- Supports the static analysis like PHPStan and Psalm. Please see [examples](docs/examples)
 
 ```php
 // Returns a new instance of the typed array with the int type value
