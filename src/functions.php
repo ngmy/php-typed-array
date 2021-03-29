@@ -13,6 +13,9 @@ namespace Ngmy\TypedArray;
  *
  * @phpstan-param class-string|object $class
  * @phpstan-return array<class-string, class-string>
+ *
+ * @psalm-param class-string|object $class
+ * @psalm-return array<class-string, class-string>
  */
 function class_uses_recursive($class): array
 {
@@ -38,12 +41,18 @@ function class_uses_recursive($class): array
  *
  * @phpstan-param class-string $trait
  * @phpstan-return array<class-string, class-string>
+ *
+ * @psalm-param class-string|trait-string $trait
+ * @psalm-return array<trait-string, trait-string>
  */
 function trait_uses_recursive(string $trait): array
 {
     \assert(\class_uses($trait) !== false);
+    /**
+     * @phpstan-var array<class-string, class-string>
+     * @psalm-var array<trait-string, trait-string>
+     */
     $traits = \class_uses($trait);
-    /** @phpstan-var array<class-string, class-string> $traits */
 
     foreach ($traits as $trait) {
         $traits += trait_uses_recursive($trait);
