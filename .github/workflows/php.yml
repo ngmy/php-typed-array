@@ -83,9 +83,6 @@ jobs:
       - name: Run lint
         run: composer lint
 
-      - name: Run bug analysis
-        run: composer findbugs
-
       - name: Run unit tests
         env:
           XDEBUG_MODE: coverage
