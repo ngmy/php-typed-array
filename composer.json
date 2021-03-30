@@ -72,7 +72,7 @@
             "tools/phpunit --colors=always"
         ],
         "psalm": [
-            "@php tools/psalm --no-cache"
+            "[ \"${PSALM_SHEPHERD:-0}\" = '0' ] && tools/psalm --no-cache || tools/psalm --no-cache --shepherd"
         ]
     }
 }
