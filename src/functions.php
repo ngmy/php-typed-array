@@ -49,8 +49,8 @@ function trait_uses_recursive(string $trait): array
 {
     \assert(\class_uses($trait) !== false);
     /**
-     * @phpstan-var array<class-string, class-string>
-     * @psalm-var array<trait-string, trait-string>
+     * @phpstan-var array<class-string, class-string> $traits
+     * @psalm-var array<trait-string, trait-string> $traits
      */
     $traits = \class_uses($trait);
 

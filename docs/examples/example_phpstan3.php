@@ -7,10 +7,9 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 $typedArray = Ngmy\TypedArray\TypedArray::new()
     ->withIntKey()
     ->withStringValue();
+// NOTE: PHPStan does not yet support conditional types, so @phpstan-var is needed
+/** @phpstan-var int $key */
 foreach ($typedArray as $key => $value) {
-    PHPStan\dumpType($key);   // int|string
-    // NOTE: PHPStan does not yet support conditional types, so @phpstan-var is needed
-    /** @phpstan-var int $key */
     PHPStan\dumpType($key);   // int
     PHPStan\dumpType($value); // string
 }
