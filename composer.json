@@ -54,22 +54,22 @@
             "@phpdoc"
         ],
         "php-cs-fixer": [
-            "@php tools/php-cs-fixer fix --ansi"
+            "tools/php-cs-fixer fix --ansi"
         ],
         "phpcbf": [
-            "@php tools/phpcbf"
+            "tools/phpcbf"
         ],
         "phpcs": [
-            "@php tools/phpcs"
+            "tools/phpcs"
         ],
         "phpdoc": [
-            "@php tools/phpDocumentor --force"
+            "tools/phpDocumentor --force"
         ],
         "phpstan": [
-            "@php tools/phpstan analyse --ansi"
+            "tools/phpstan analyse --ansi"
         ],
         "phpunit": [
-            "@php tools/phpunit --colors=always"
+            "tools/phpunit --colors=always"
         ],
         "psalm": [
             "@php tools/psalm --no-cache"
