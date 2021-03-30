@@ -7,7 +7,8 @@
 [![PHP CI](https://github.com/ngmy/php-typed-array/actions/workflows/php.yml/badge.svg)](https://github.com/ngmy/php-typed-array/actions/workflows/php.yml)
 [![Coverage Status](https://coveralls.io/repos/github/ngmy/php-typed-array/badge.svg?branch=master)](https://coveralls.io/github/ngmy/php-typed-array?branch=master)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
-[![Psalm Enabled](https://img.shields.io/badge/Psalm-enabled-brightgreen.svg?style=flat)](https://psalm.dev/)
+[![Psalm Coverage](https://shepherd.dev/github/ngmy/php-typed-array/coverage.svg?)](https://shepherd.dev/github/ngmy/php-typed-array)
+[![Psalm Level](https://shepherd.dev/github/ngmy/php-typed-array/level.svg?)](https://shepherd.dev/github/ngmy/php-typed-array)
 
 PHP Typed Array is the typed array for PHP.
 
