@@ -22,6 +22,12 @@ use Traversable;
  * @phpstan-template TValue
  * @phpstan-implements ArrayAccess<TKey, TValue>
  * @phpstan-implements IteratorAggregate<int|string, TValue>
+ *
+ * @psalm-template TKey
+ * @psalm-template TValue
+ * @template-implements ArrayAccess<TKey, TValue>
+ * @template-implements IteratorAggregate<int|string, TValue>
+ * @psalm-type IntArrayKey int|null
  */
 class TypedArray implements ArrayAccess, Countable, IteratorAggregate
 {
@@ -58,6 +64,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * @var string
      * @phpstan-var class-string<TKey>|string
+     * @psalm-var class-string<TKey>|string
      */
     private $keyType;
     /** @var string|null */
@@ -65,6 +72,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * @var string
      * @phpstan-var class-string<TValue>|string
+     * @psalm-var class-string<TValue>|string
      */
     private $valueType;
     /** @var string|null */
@@ -75,6 +83,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      *
      * @var array<int|string, mixed>
      * @phpstan-var array<int|string, TKey>
+     * @psalm-var array<int|string, TKey>
      */
     private $keys = [];
     /**
@@ -82,6 +91,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      *
      * @var array<int|string, mixed>
      * @phpstan-var array<int|string, TValue>
+     * @psalm-var array<int|string, TValue>
      */
     private $values = [];
 
@@ -106,9 +116,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<bool, mixed>
      *
      * @phpstan-return TypedArray<bool, TValue>
+     *
+     * @psalm-return TypedArray<bool, TValue>
      */
     public function withBoolKey(): self
     {
+        /** @psalm-var TypedArray<bool, TValue> */
         return new self(
             self::KEY_TYPES['bool'],
             null,
@@ -123,9 +136,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<float, mixed>
      *
      * @phpstan-return TypedArray<float, TValue>
+     *
+     * @psalm-return TypedArray<float, TValue>
      */
     public function withFloatKey(): self
     {
+        /** @psalm-var TypedArray<float, TValue> */
         return new self(
             self::KEY_TYPES['float'],
             null,
@@ -140,9 +156,15 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<int|null, mixed>
      *
      * @phpstan-return TypedArray<int|null, TValue>
+     *
+     * @psalm-return TypedArray<IntArrayKey, TValue>
      */
     public function withIntKey(): self
     {
+        /**
+         * @phpstan-var TypedArray<int|null, TValue>
+         * @psalm-var TypedArray<IntArrayKey, TValue>
+         */
         return new self(
             self::KEY_TYPES['int'],
             null,
@@ -157,9 +179,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<mixed, mixed>
      *
      * @phpstan-return TypedArray<mixed, TValue>
+     *
+     * @psalm-return TypedArray<mixed, TValue>
      */
     public function withMixedKey(): self
     {
+        /** @psalm-var TypedArray<mixed, TValue> */
         return new self(
             self::KEY_TYPES['mixed'],
             null,
@@ -173,15 +198,18 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      *
      * If you are using an object as the key, it is recommended that you implement the equals()
      * and hashCode() methods on the object to determine whether keys are equal or not.
-     * Otherwise, the === operator and spl_object_hash() function are used to determine it.
+     * Otherwise, the === operator and spl_object_id() function are used to determine it.
      * @see \Ngmy\TypedArray\Tests\Data\Class7
      *
      * @return TypedArray<object, mixed>
      *
      * @phpstan-return TypedArray<object, TValue>
+     *
+     * @psalm-return TypedArray<object, TValue>
      */
     public function withObjectKey(): self
     {
+        /** @psalm-var TypedArray<object, TValue> */
         return new self(
             self::KEY_TYPES['object'],
             null,
@@ -196,9 +224,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<resource, mixed>
      *
      * @phpstan-return TypedArray<resource, TValue>
+     *
+     * @psalm-return TypedArray<resource, TValue>
      */
     public function withResourceKey(): self
     {
+        /** @psalm-var TypedArray<resource, TValue> */
         return new self(
             self::KEY_TYPES['resource'],
             null,
@@ -213,9 +244,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<string, mixed>
      *
      * @phpstan-return TypedArray<string, TValue>
+     *
+     * @psalm-return TypedArray<string, TValue>
      */
     public function withStringKey(): self
     {
+        /** @psalm-var TypedArray<string, TValue> */
         return new self(
             self::KEY_TYPES['string'],
             null,
@@ -229,7 +263,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      *
      * If you are using an object as the key, it is recommended that you implement the equals()
      * and hashCode() methods on the object to determine whether keys are equal or not.
-     * Otherwise, the === operator and spl_object_hash() function are used to determine it.
+     * Otherwise, the === operator and spl_object_id() function are used to determine it.
      * @see \Ngmy\TypedArray\Tests\Data\Class7
      *
      * @return TypedArray<object, mixed>
@@ -237,6 +271,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @phpstan-template TClass
      * @phpstan-param class-string<TClass> $class
      * @phpstan-return TypedArray<TClass, TValue>
+     *
+     * @psalm-template TClass
+     * @psalm-param class-string<TClass> $class
+     * @psalm-return TypedArray<TClass, TValue>
      */
     public function withClassKey(string $class): self
     {
@@ -248,6 +286,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
                 )
             );
         }
+        /** @psalm-var TypedArray<TClass, TValue> */
         return new self(
             $class,
             self::KEY_CLASS_KINDS['class'],
@@ -261,7 +300,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      *
      * If you are using an object as the key, it is recommended that you implement the equals()
      * and hashCode() methods on the object to determine whether keys are equal or not.
-     * Otherwise, the === operator and spl_object_hash() function are used to determine it.
+     * Otherwise, the === operator and spl_object_id() function are used to determine it.
      * @see \Ngmy\TypedArray\Tests\Data\Class7
      *
      * @return TypedArray<object, mixed>
@@ -269,6 +308,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @phpstan-template TInterface
      * @phpstan-param class-string<TInterface> $interface
      * @phpstan-return TypedArray<TInterface, TValue>
+     *
+     * @psalm-template TInterface
+     * @psalm-param class-string<TInterface> $interface
+     * @psalm-return TypedArray<TInterface, TValue>
      */
     public function withInterfaceKey(string $interface): self
     {
@@ -280,6 +323,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
                 )
             );
         }
+        /** @psalm-var TypedArray<TInterface, TValue> */
         return new self(
             $interface,
             self::KEY_CLASS_KINDS['interface'],
@@ -293,16 +337,21 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      *
      * If you are using an object as the key, it is recommended that you implement the equals()
      * and hashCode() methods on the object to determine whether keys are equal or not.
-     * Otherwise, the === operator and spl_object_hash() function are used to determine it.
+     * Otherwise, the === operator and spl_object_id() function are used to determine it.
      * @see \Ngmy\TypedArray\Tests\Data\Class7
      *
      * @return TypedArray<object, mixed>
      *
      * @phpstan-param class-string $trait
+     * @phpstan-return TypedArray<object, TValue>
+     *
+     * @psalm-param trait-string $trait
+     * @psalm-return TypedArray<object, TValue>
      */
     public function withTraitKey(string $trait): self
     {
         if (!\trait_exists($trait)) {
+            /** @psalm-var string $trait */
             throw new InvalidArgumentException(
                 \sprintf(
                     'The trait type key must be the name of an existing trait, "%s" given.',
@@ -310,6 +359,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
                 )
             );
         }
+        /** @psalm-var TypedArray<object, TValue> */
         return new self(
             $trait,
             self::KEY_CLASS_KINDS['trait'],
@@ -324,9 +374,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<mixed, array<int|string, mixed>>
      *
      * @phpstan-return TypedArray<TKey, array<int|string, mixed>>
+     *
+     * @psalm-return TypedArray<TKey, array<int|string, mixed>>
      */
     public function withArrayValue(): self
     {
+        /** @psalm-var TypedArray<TKey, array<int|string, mixed>> */
         return new self(
             $this->keyType,
             $this->keyClassKind,
@@ -341,9 +394,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<mixed, bool>
      *
      * @phpstan-return TypedArray<TKey, bool>
+     *
+     * @psalm-return TypedArray<TKey, bool>
      */
     public function withBoolValue(): self
     {
+        /** @psalm-var TypedArray<TKey, bool> */
         return new self(
             $this->keyType,
             $this->keyClassKind,
@@ -358,9 +414,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<mixed, float>
      *
      * @phpstan-return TypedArray<TKey, float>
+     *
+     * @psalm-return TypedArray<TKey, float>
      */
     public function withFloatValue(): self
     {
+        /** @psalm-var TypedArray<TKey, float> */
         return new self(
             $this->keyType,
             $this->keyClassKind,
@@ -375,9 +434,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<mixed, int>
      *
      * @phpstan-return TypedArray<TKey, int>
+     *
+     * @psalm-return TypedArray<TKey, int>
      */
     public function withIntValue(): self
     {
+        /** @psalm-var TypedArray<TKey, int> */
         return new self(
             $this->keyType,
             $this->keyClassKind,
@@ -392,9 +454,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<mixed, mixed>
      *
      * @phpstan-return TypedArray<TKey, mixed>
+     *
+     * @psalm-return TypedArray<TKey, mixed>
      */
     public function withMixedValue(): self
     {
+        /** @psalm-var TypedArray<TKey, mixed> */
         return new self(
             $this->keyType,
             $this->keyClassKind,
@@ -409,9 +474,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<mixed, object>
      *
      * @phpstan-return TypedArray<TKey, object>
+     *
+     * @psalm-return TypedArray<TKey, object>
      */
     public function withObjectValue(): self
     {
+        /** @psalm-var TypedArray<TKey, object> */
         return new self(
             $this->keyType,
             $this->keyClassKind,
@@ -426,9 +494,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<mixed, resource>
      *
      * @phpstan-return TypedArray<TKey, resource>
+     *
+     * @psalm-return TypedArray<TKey, resource>
      */
     public function withResourceValue(): self
     {
+        /** @psalm-var TypedArray<TKey, resource> */
         return new self(
             $this->keyType,
             $this->keyClassKind,
@@ -443,9 +514,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<mixed, string>
      *
      * @phpstan-return TypedArray<TKey, string>
+     *
+     * @psalm-return TypedArray<TKey, string>
      */
     public function withStringValue(): self
     {
+        /** @psalm-var TypedArray<TKey, string> */
         return new self(
             $this->keyType,
             $this->keyClassKind,
@@ -462,6 +536,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @phpstan-template TClass
      * @phpstan-param class-string<TClass> $class
      * @phpstan-return TypedArray<TKey, TClass>
+     *
+     * @psalm-template TClass
+     * @psalm-param class-string<TClass> $class
+     * @psalm-return TypedArray<TKey, TClass>
      */
     public function withClassValue(string $class): self
     {
@@ -473,6 +551,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
                 )
             );
         }
+        /** @psalm-var TypedArray<TKey, TClass> */
         return new self(
             $this->keyType,
             $this->keyClassKind,
@@ -489,6 +568,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @phpstan-template TInterface
      * @phpstan-param class-string<TInterface> $interface
      * @phpstan-return TypedArray<TKey, TInterface>
+     *
+     * @psalm-template TInterface
+     * @psalm-param class-string<TInterface> $interface
+     * @psalm-return TypedArray<TKey, TInterface>
      */
     public function withInterfaceValue(string $interface): self
     {
@@ -500,6 +583,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
                 )
             );
         }
+        /** @psalm-var TypedArray<TKey, TInterface> */
         return new self(
             $this->keyType,
             $this->keyClassKind,
@@ -514,10 +598,15 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return TypedArray<mixed, object>
      *
      * @phpstan-param class-string $trait
+     * @phpstan-return TypedArray<TKey, object>
+     *
+     * @psalm-param trait-string $trait
+     * @psalm-return TypedArray<TKey, object>
      */
     public function withTraitValue(string $trait): self
     {
         if (!\trait_exists($trait)) {
+            /** @psalm-var string $trait */
             throw new InvalidArgumentException(
                 \sprintf(
                     'The trait type value must be the name of an existing trait, "%s" given.',
@@ -525,6 +614,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
                 )
             );
         }
+        /** @psalm-var TypedArray<TKey, object> */
         return new self(
             $this->keyType,
             $this->keyClassKind,
@@ -547,6 +637,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return array<int|string, mixed>
      *
      * @phpstan-return array<int|string, TValue>
+     *
+     * @psalm-return array<(
+     *     TKey is IntArrayKey|object
+     *         ? int
+     *         : (TKey is bool|float|string|resource ? string : int|string)
+     * ), TValue>
      */
     public function toArray(): array
     {
@@ -569,6 +665,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @see https://www.php.net/manual/en/arrayaccess.offsetget.php
      *
      * @phpstan-return TValue|null
+     *
+     * @psalm-return TValue|null
      */
     public function offsetGet($key)
     {
@@ -586,6 +684,9 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      *
      * @phpstan-param TKey   $key
      * @phpstan-param TValue $value
+     *
+     * @psalm-param TKey   $key
+     * @psalm-param TValue $value
      */
     public function offsetSet($key, $value): void
     {
@@ -599,14 +700,17 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
             || ($this->valueType == self::VALUE_TYPES['string'] && !\is_string($value))
             || (
                 $this->valueClassKind == self::VALUE_CLASS_KINDS['class']
+                && (\is_object($value) || \is_string($value))
                 && !\is_a($value, $this->valueType)
             )
             || (
                 $this->valueClassKind == self::VALUE_CLASS_KINDS['interface']
+                && (\is_object($value) || \is_string($value))
                 && !\is_subclass_of($value, $this->valueType)
             )
             || (
                 $this->valueClassKind == self::VALUE_CLASS_KINDS['trait']
+                && (\is_object($value) || (\is_string($value) && \class_exists($value)))
                 && !\array_key_exists($this->valueType, class_uses_recursive($value))
             )
         ) {
@@ -636,14 +740,22 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
         if (!$this->keyExists($key, $keyHashCode)) {
             return;
         }
+        if (!isset($this->values[$keyHashCode])) {
+            return;
+        }
         unset($this->values[$keyHashCode]);
         if (\is_object($key)) {
+            \assert(isset($this->keys[$keyHashCode]));
             unset($this->keys[$keyHashCode]);
         }
     }
 
     /**
      * @see https://www.php.net/manual/en/countable.count.php
+     *
+     * @phpstan-return 0|positive-int
+     *
+     * @psalm-return 0|positive-int
      */
     public function count(): int
     {
@@ -651,10 +763,16 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     }
 
     /**
-     * @return Traversable<int|string, mixed>
+     * @return ArrayIterator<int|string, mixed>
      * @see https://www.php.net/manual/en/iteratoraggregate.getiterator.php
      *
-     * @phpstan-return Traversable<int|string, TValue>
+     * @phpstan-return ArrayIterator<int|string, TValue>
+     *
+     * @psalm-return ArrayIterator<(
+     *     TKey is IntArrayKey|object
+     *         ? int
+     *         : (TKey is bool|float|string|resource ? string : int|string)
+     * ), TValue>
      */
     public function getIterator(): Traversable
     {
@@ -676,6 +794,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * @param mixed $key
      * @return int|string|null
+     *
+     * @phpstan-return int|string|null
+     *
+     * @psalm-return IntArrayKey|string
      */
     private function getKeyHashCode($key)
     {
@@ -688,14 +810,17 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
             || ($this->keyType == self::KEY_TYPES['string'] && !\is_string($key))
             || (
                 $this->keyClassKind == self::KEY_CLASS_KINDS['class']
+                && (\is_object($key) || \is_string($key))
                 && !\is_a($key, $this->keyType)
             )
             || (
                 $this->keyClassKind == self::KEY_CLASS_KINDS['interface']
+                && (\is_object($key) || \is_string($key))
                 && !\is_subclass_of($key, $this->keyType)
             )
             || (
                 $this->keyClassKind == self::KEY_CLASS_KINDS['trait']
+                && (\is_object($key) || (\is_string($key) && \class_exists($key)))
                 && !\array_key_exists($this->keyType, class_uses_recursive($key))
             )
         ) {
@@ -714,7 +839,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
             return $key;
         }
         if (\is_object($key)) {
-            return \method_exists($key, 'hashCode') ? $key->hashCode() : \spl_object_hash($key);
+            if (\method_exists($key, 'hashCode')) {
+                $keyHashCode = $key->hashCode();
+                \assert(\is_int($keyHashCode));
+                return $keyHashCode;
+            }
+            return \spl_object_id($key);
         }
         return (string) $key;
     }
@@ -722,6 +852,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * @param mixed           $key
      * @param int|string|null $keyHashCode
+     *
+     * @phpstan-param int|string|null $keyHashCode
+     *
+     * @psalm-param IntArrayKey|string $keyHashCode
      */
     private function keyExists($key, $keyHashCode): bool
     {

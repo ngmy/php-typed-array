@@ -39,20 +39,40 @@
     "prefer-stable": true,
     "scripts": {
         "test": [
-            "@php tools/phpunit --colors=always"
+            "@phpunit"
         ],
         "lint": [
-            "@php tools/phpcs"
-        ],
-        "findbugs": [
-            "@php tools/phpstan analyse --ansi"
+            "@phpcs",
+            "@phpstan",
+            "@psalm"
         ],
         "fmt": [
-            "@php tools/phpcbf | exit 0",
+            "@phpcbf",
+            "@php-cs-fixer"
+        ],
+        "doc": [
+            "@phpdoc"
+        ],
+        "php-cs-fixer": [
             "@php tools/php-cs-fixer fix --ansi"
         ],
-        "docs": [
+        "phpcbf": [
+            "@php tools/phpcbf"
+        ],
+        "phpcs": [
+            "@php tools/phpcs"
+        ],
+        "phpdoc": [
             "@php tools/phpDocumentor --force"
+        ],
+        "phpstan": [
+            "@php tools/phpstan analyse --ansi"
+        ],
+        "phpunit": [
+            "@php tools/phpunit --colors=always"
+        ],
+        "psalm": [
+            "@php tools/psalm --no-cache"
         ]
     }
 }

@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 PHPStan\dumpType(Ngmy\TypedArray\TypedArray::new());                      // Ngmy\TypedArray\TypedArray<mixed, mixed>
 PHPStan\dumpType(Ngmy\TypedArray\TypedArray::new()->withBoolKey());       // Ngmy\TypedArray\TypedArray<bool, mixed>
 PHPStan\dumpType(Ngmy\TypedArray\TypedArray::new()->withFloatKey());      // Ngmy\TypedArray\TypedArray<float, mixed>
-PHPStan\dumpType(Ngmy\TypedArray\TypedArray::new()->withIntKey());        // Ngmy\TypedArray\TypedArray<int, mixed>
+PHPStan\dumpType(Ngmy\TypedArray\TypedArray::new()->withIntKey());        // Ngmy\TypedArray\TypedArray<int|null, mixed>
 PHPStan\dumpType(Ngmy\TypedArray\TypedArray::new()->withMixedKey());      // Ngmy\TypedArray\TypedArray<mixed, mixed>
 PHPStan\dumpType(Ngmy\TypedArray\TypedArray::new()->withObjectKey());     // Ngmy\TypedArray\TypedArray<object, mixed>
 PHPStan\dumpType(Ngmy\TypedArray\TypedArray::new()->withResourceKey());   // Ngmy\TypedArray\TypedArray<resource, mixed>
