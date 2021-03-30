@@ -27,6 +27,7 @@ use Traversable;
  * @psalm-template TValue
  * @template-implements ArrayAccess<TKey, TValue>
  * @template-implements IteratorAggregate<int|string, TValue>
+ * @psalm-type IntArrayKey int|null
  */
 class TypedArray implements ArrayAccess, Countable, IteratorAggregate
 {
@@ -156,11 +157,14 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      *
      * @phpstan-return TypedArray<int|null, TValue>
      *
-     * @psalm-return TypedArray<int|null, TValue>
+     * @psalm-return TypedArray<IntArrayKey, TValue>
      */
     public function withIntKey(): self
     {
-        /** @psalm-var TypedArray<int|null, TValue> */
+        /**
+         * @phpstan-var TypedArray<int|null, TValue>
+         * @psalm-var TypedArray<IntArrayKey, TValue>
+         */
         return new self(
             self::KEY_TYPES['int'],
             null,
@@ -635,7 +639,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @phpstan-return array<int|string, TValue>
      *
      * @psalm-return array<(
-     *     TKey is int|null
+     *     TKey is IntArrayKey|object
      *         ? int
      *         : (TKey is bool|float|string|resource ? string : int|string)
      * ), TValue>
@@ -765,7 +769,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @phpstan-return ArrayIterator<int|string, TValue>
      *
      * @psalm-return ArrayIterator<(
-     *     TKey is int|null
+     *     TKey is IntArrayKey|object
      *         ? int
      *         : (TKey is bool|float|string|resource ? string : int|string)
      * ), TValue>
@@ -790,6 +794,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * @param mixed $key
      * @return int|string|null
+     *
+     * @phpstan-return int|string|null
+     *
+     * @psalm-return IntArrayKey|string
      */
     private function getKeyHashCode($key)
     {
@@ -844,6 +852,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * @param mixed           $key
      * @param int|string|null $keyHashCode
+     *
+     * @phpstan-param int|string|null $keyHashCode
+     *
+     * @psalm-param IntArrayKey|string $keyHashCode
      */
     private function keyExists($key, $keyHashCode): bool
     {
