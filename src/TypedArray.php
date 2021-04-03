@@ -728,18 +728,15 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
             || ($this->valueType == self::VALUE_TYPES['string'] && !is_string($value))
             || (
                 $this->valueClassKind == self::VALUE_CLASS_KINDS['class']
-                && (is_object($value) || is_string($value))
-                && !is_a($value, $this->valueType)
+                && (!is_object($value) || !is_a($value, $this->valueType))
             )
             || (
                 $this->valueClassKind == self::VALUE_CLASS_KINDS['interface']
-                && (is_object($value) || is_string($value))
-                && !is_subclass_of($value, $this->valueType)
+                && (!is_object($value) || !is_subclass_of($value, $this->valueType))
             )
             || (
                 $this->valueClassKind == self::VALUE_CLASS_KINDS['trait']
-                && (is_object($value) || (is_string($value) && class_exists($value)))
-                && !array_key_exists($this->valueType, class_uses_recursive($value))
+                && (!is_object($value) || !array_key_exists($this->valueType, class_uses_recursive($value)))
             )
         ) {
             $givenValueType = is_object($value) ? get_class($value) : gettype($value);
@@ -844,18 +841,15 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
             || ($this->keyType == self::KEY_TYPES['string'] && !is_string($key))
             || (
                 $this->keyClassKind == self::KEY_CLASS_KINDS['class']
-                && (is_object($key) || is_string($key))
-                && !is_a($key, $this->keyType)
+                && (!is_object($key) || !is_a($key, $this->keyType))
             )
             || (
                 $this->keyClassKind == self::KEY_CLASS_KINDS['interface']
-                && (is_object($key) || is_string($key))
-                && !is_subclass_of($key, $this->keyType)
+                && (!is_object($key) || !is_subclass_of($key, $this->keyType))
             )
             || (
                 $this->keyClassKind == self::KEY_CLASS_KINDS['trait']
-                && (is_object($key) || (is_string($key) && class_exists($key)))
-                && !array_key_exists($this->keyType, class_uses_recursive($key))
+                && (!is_object($key) || !array_key_exists($this->keyType, class_uses_recursive($key)))
             )
         ) {
             $givenKeyType = is_object($key) ? get_class($key) : gettype($key);
