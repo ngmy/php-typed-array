@@ -8,6 +8,15 @@ use Exception;
 use InvalidArgumentException;
 use Ngmy\TypedArray\TypedArray;
 
+use function assert;
+use function count;
+use function get_class;
+use function is_array;
+use function iterator_to_array;
+use function strtolower;
+use function tmpfile;
+use function ucwords;
+
 /**
  * @group value
  */
@@ -57,7 +66,7 @@ class TypedArrayPrimitiveValueTest extends TestCase
             ],
             [
                 'mixed',
-                [[], true, 0.0, 0, new Data\Class1(), \tmpfile(), ''],
+                [[], true, 0.0, 0, new Data\Class1(), tmpfile(), ''],
             ],
             [
                 'object',
@@ -70,7 +79,7 @@ class TypedArrayPrimitiveValueTest extends TestCase
             ],
             [
                 'resource',
-                [\tmpfile(), \tmpfile()],
+                [tmpfile(), tmpfile()],
             ],
             [
                 'resource',
@@ -98,10 +107,10 @@ class TypedArrayPrimitiveValueTest extends TestCase
     public function test(string $valueType, ?array $values, Exception $exception = null): void
     {
         if ($exception instanceof Exception) {
-            $this->expectException(\get_class($exception));
+            $this->expectException(get_class($exception));
         }
 
-        \assert(\is_array($values));
+        assert(is_array($values));
 
         // Test instantiation
         $typedArray = $this->createInstance($valueType);
@@ -122,13 +131,13 @@ class TypedArrayPrimitiveValueTest extends TestCase
         }
 
         // Test calling the count() function
-        $this->assertSame(\count($values), \count($typedArray));
+        $this->assertSame(count($values), count($typedArray));
 
         // Test calling the toArray() method
         $this->assertSame($values, $typedArray->toArray());
 
         // Test calling the iterator_to_array() function
-        $this->assertSame($values, \iterator_to_array($typedArray));
+        $this->assertSame($values, iterator_to_array($typedArray));
 
         // Test calling the unset(), isset() and empty() functions
         foreach ($typedArray as $key => $value) {
@@ -153,7 +162,7 @@ class TypedArrayPrimitiveValueTest extends TestCase
      */
     protected function createInstance(string $valueType): TypedArray
     {
-        $withPrimitiveValue = 'with' . \ucwords(\strtolower($valueType)) . 'Value';
+        $withPrimitiveValue = 'with' . ucwords(strtolower($valueType)) . 'Value';
         return TypedArray::new()->$withPrimitiveValue();
     }
 }

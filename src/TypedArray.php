@@ -11,6 +11,28 @@ use InvalidArgumentException;
 use IteratorAggregate;
 use Traversable;
 
+use function array_key_exists;
+use function assert;
+use function class_exists;
+use function count;
+use function get_class;
+use function gettype;
+use function interface_exists;
+use function is_a;
+use function is_array;
+use function is_bool;
+use function is_float;
+use function is_int;
+use function is_null;
+use function is_object;
+use function is_resource;
+use function is_string;
+use function is_subclass_of;
+use function method_exists;
+use function spl_object_id;
+use function sprintf;
+use function trait_exists;
+
 /**
  * @implements ArrayAccess<mixed, mixed>
  * @implements IteratorAggregate<int|string, mixed>
@@ -278,9 +300,9 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     public function withClassKey(string $class): self
     {
-        if (!\class_exists($class)) {
+        if (!class_exists($class)) {
             throw new InvalidArgumentException(
-                \sprintf(
+                sprintf(
                     'The class type key must be the name of an existing class, "%s" given.',
                     $class
                 )
@@ -315,9 +337,9 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     public function withInterfaceKey(string $interface): self
     {
-        if (!\interface_exists($interface)) {
+        if (!interface_exists($interface)) {
             throw new InvalidArgumentException(
-                \sprintf(
+                sprintf(
                     'The interface type key must be the name of an existing interface, "%s" given.',
                     $interface
                 )
@@ -350,10 +372,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     public function withTraitKey(string $trait): self
     {
-        if (!\trait_exists($trait)) {
+        if (!trait_exists($trait)) {
             /** @psalm-var string $trait */
             throw new InvalidArgumentException(
-                \sprintf(
+                sprintf(
                     'The trait type key must be the name of an existing trait, "%s" given.',
                     $trait
                 )
@@ -543,9 +565,9 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     public function withClassValue(string $class): self
     {
-        if (!\class_exists($class)) {
+        if (!class_exists($class)) {
             throw new InvalidArgumentException(
-                \sprintf(
+                sprintf(
                     'The class type value value be the name of an existing class, "%s" given.',
                     $class
                 )
@@ -575,9 +597,9 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     public function withInterfaceValue(string $interface): self
     {
-        if (!\interface_exists($interface)) {
+        if (!interface_exists($interface)) {
             throw new InvalidArgumentException(
-                \sprintf(
+                sprintf(
                     'The interface type value must be the name of an existing interface, "%s" given.',
                     $interface
                 )
@@ -605,10 +627,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     public function withTraitValue(string $trait): self
     {
-        if (!\trait_exists($trait)) {
+        if (!trait_exists($trait)) {
             /** @psalm-var string $trait */
             throw new InvalidArgumentException(
-                \sprintf(
+                sprintf(
                     'The trait type value must be the name of an existing trait, "%s" given.',
                     $trait
                 )
@@ -697,40 +719,40 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     public function offsetSet($key, $value): void
     {
         if (
-            ($this->valueType == self::VALUE_TYPES['array'] && !\is_array($value))
-            || ($this->valueType == self::VALUE_TYPES['bool'] && !\is_bool($value))
-            || ($this->valueType == self::VALUE_TYPES['float'] && !\is_float($value))
-            || ($this->valueType == self::VALUE_TYPES['int'] && !\is_int($value))
-            || ($this->valueType == self::VALUE_TYPES['object'] && !\is_object($value))
-            || ($this->valueType == self::VALUE_TYPES['resource'] && !\is_resource($value))
-            || ($this->valueType == self::VALUE_TYPES['string'] && !\is_string($value))
+            ($this->valueType == self::VALUE_TYPES['array'] && !is_array($value))
+            || ($this->valueType == self::VALUE_TYPES['bool'] && !is_bool($value))
+            || ($this->valueType == self::VALUE_TYPES['float'] && !is_float($value))
+            || ($this->valueType == self::VALUE_TYPES['int'] && !is_int($value))
+            || ($this->valueType == self::VALUE_TYPES['object'] && !is_object($value))
+            || ($this->valueType == self::VALUE_TYPES['resource'] && !is_resource($value))
+            || ($this->valueType == self::VALUE_TYPES['string'] && !is_string($value))
             || (
                 $this->valueClassKind == self::VALUE_CLASS_KINDS['class']
-                && (\is_object($value) || \is_string($value))
-                && !\is_a($value, $this->valueType)
+                && (is_object($value) || is_string($value))
+                && !is_a($value, $this->valueType)
             )
             || (
                 $this->valueClassKind == self::VALUE_CLASS_KINDS['interface']
-                && (\is_object($value) || \is_string($value))
-                && !\is_subclass_of($value, $this->valueType)
+                && (is_object($value) || is_string($value))
+                && !is_subclass_of($value, $this->valueType)
             )
             || (
                 $this->valueClassKind == self::VALUE_CLASS_KINDS['trait']
-                && (\is_object($value) || (\is_string($value) && \class_exists($value)))
-                && !\array_key_exists($this->valueType, class_uses_recursive($value))
+                && (is_object($value) || (is_string($value) && class_exists($value)))
+                && !array_key_exists($this->valueType, class_uses_recursive($value))
             )
         ) {
-            $givenValueType = \is_object($value) ? \get_class($value) : \gettype($value);
+            $givenValueType = is_object($value) ? get_class($value) : gettype($value);
             throw new InvalidArgumentException(
-                \sprintf('The type of the value must be "%s", "%s" given.', $this->valueType, $givenValueType)
+                sprintf('The type of the value must be "%s", "%s" given.', $this->valueType, $givenValueType)
             );
         }
         $keyHashCode = $this->getKeyHashCode($key);
-        if (\is_null($keyHashCode)) {
+        if (is_null($keyHashCode)) {
             $this->values[] = $value;
         } else {
             $this->values[$keyHashCode] = $value;
-            if (\is_object($key)) {
+            if (is_object($key)) {
                 $this->keys[$keyHashCode] = $key;
             }
         }
@@ -754,8 +776,8 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
             return;
         }
         unset($this->values[$keyHashCode]);
-        if (\is_object($key)) {
-            \assert(isset($this->keys[$keyHashCode]));
+        if (is_object($key)) {
+            assert(isset($this->keys[$keyHashCode]));
             unset($this->keys[$keyHashCode]);
         }
     }
@@ -769,7 +791,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     public function count(): int
     {
-        return \count($this->values);
+        return count($this->values);
     }
 
     /**
@@ -814,49 +836,49 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     private function getKeyHashCode($key)
     {
         if (
-            ($this->keyType == self::KEY_TYPES['bool'] && !\is_bool($key))
-            || ($this->keyType == self::KEY_TYPES['float'] && !\is_float($key))
-            || ($this->keyType == self::KEY_TYPES['int'] && !\is_int($key) && !\is_null($key))
-            || ($this->keyType == self::KEY_TYPES['object'] && !\is_object($key))
-            || ($this->keyType == self::KEY_TYPES['resource'] && !\is_resource($key))
-            || ($this->keyType == self::KEY_TYPES['string'] && !\is_string($key))
+            ($this->keyType == self::KEY_TYPES['bool'] && !is_bool($key))
+            || ($this->keyType == self::KEY_TYPES['float'] && !is_float($key))
+            || ($this->keyType == self::KEY_TYPES['int'] && !is_int($key) && !is_null($key))
+            || ($this->keyType == self::KEY_TYPES['object'] && !is_object($key))
+            || ($this->keyType == self::KEY_TYPES['resource'] && !is_resource($key))
+            || ($this->keyType == self::KEY_TYPES['string'] && !is_string($key))
             || (
                 $this->keyClassKind == self::KEY_CLASS_KINDS['class']
-                && (\is_object($key) || \is_string($key))
-                && !\is_a($key, $this->keyType)
+                && (is_object($key) || is_string($key))
+                && !is_a($key, $this->keyType)
             )
             || (
                 $this->keyClassKind == self::KEY_CLASS_KINDS['interface']
-                && (\is_object($key) || \is_string($key))
-                && !\is_subclass_of($key, $this->keyType)
+                && (is_object($key) || is_string($key))
+                && !is_subclass_of($key, $this->keyType)
             )
             || (
                 $this->keyClassKind == self::KEY_CLASS_KINDS['trait']
-                && (\is_object($key) || (\is_string($key) && \class_exists($key)))
-                && !\array_key_exists($this->keyType, class_uses_recursive($key))
+                && (is_object($key) || (is_string($key) && class_exists($key)))
+                && !array_key_exists($this->keyType, class_uses_recursive($key))
             )
         ) {
-            $givenKeyType = \is_object($key) ? \get_class($key) : \gettype($key);
+            $givenKeyType = is_object($key) ? get_class($key) : gettype($key);
             throw new InvalidArgumentException(
-                \sprintf('The type of the key must be "%s", "%s" given.', $this->keyType, $givenKeyType)
+                sprintf('The type of the key must be "%s", "%s" given.', $this->keyType, $givenKeyType)
             );
         }
-        if (\is_null($key)) {
+        if (is_null($key)) {
             return null;
         }
-        if (\is_float($key)) {
-            return \sprintf('%.30f', $key);
+        if (is_float($key)) {
+            return sprintf('%.30f', $key);
         }
-        if (\is_int($key)) {
+        if (is_int($key)) {
             return $key;
         }
-        if (\is_object($key)) {
-            if (\method_exists($key, 'hashCode')) {
+        if (is_object($key)) {
+            if (method_exists($key, 'hashCode')) {
                 $keyHashCode = $key->hashCode();
-                \assert(\is_int($keyHashCode));
+                assert(is_int($keyHashCode));
                 return $keyHashCode;
             }
-            return \spl_object_id($key);
+            return spl_object_id($key);
         }
         return (string) $key;
     }
@@ -873,12 +895,12 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      */
     private function keyExists($key, $keyHashCode): bool
     {
-        if (!\is_object($key)) {
+        if (!is_object($key)) {
             return true;
         }
         /** @psalm-var object $key */
         return isset($this->keys[$keyHashCode]) && (
-            \method_exists($key, 'equals')
+            method_exists($key, 'equals')
                 ? $key->equals($this->keys[$keyHashCode])
                 : $key === $this->keys[$keyHashCode]
         );
