@@ -47,8 +47,8 @@
             "@psalm"
         ],
         "fmt": [
-            "@phpcbf",
-            "@php-cs-fixer"
+            "@php-cs-fixer",
+            "@phpcbf"
         ],
         "doc": [
             "@phpdoc"
