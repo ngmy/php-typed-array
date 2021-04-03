@@ -8,6 +8,14 @@ use Exception;
 use InvalidArgumentException;
 use Ngmy\TypedArray\TypedArray;
 
+use function array_values;
+use function assert;
+use function get_class;
+use function is_array;
+use function strtolower;
+use function tmpfile;
+use function ucwords;
+
 /**
  * @group key
  */
@@ -23,8 +31,8 @@ class TypedArrayPrimitiveKeyTest extends TestCase
         $object3 = new Data\Class7(1, 'John');
         $object4 = new Data\Class8(1, 'John');
         $object5 = new Data\Class8(1, 'John');
-        $resource1 = \tmpfile();
-        $resource2 = \tmpfile();
+        $resource1 = tmpfile();
+        $resource2 = tmpfile();
 
         return [
             [
@@ -176,17 +184,17 @@ class TypedArrayPrimitiveKeyTest extends TestCase
     public function test(string $keyType, ?array $keys, $expected): void
     {
         if ($expected instanceof Exception) {
-            $this->expectException(\get_class($expected));
+            $this->expectException(get_class($expected));
         }
 
-        \assert(\is_array($keys));
+        assert(is_array($keys));
 
         $typedArray = $this->createInstance($keyType);
         foreach ($keys as $key) {
             $typedArray[$key] = $key;
         }
 
-        $this->assertEquals($expected, \array_values($typedArray->toArray()));
+        $this->assertEquals($expected, array_values($typedArray->toArray()));
 
         foreach ($keys as $key) {
             unset($typedArray[$key]);
@@ -201,7 +209,7 @@ class TypedArrayPrimitiveKeyTest extends TestCase
      */
     protected function createInstance(string $keyType): TypedArray
     {
-        $withPrimitiveKey = 'with' . \ucwords(\strtolower($keyType)) . 'Key';
+        $withPrimitiveKey = 'with' . ucwords(strtolower($keyType)) . 'Key';
         return TypedArray::new()->$withPrimitiveKey();
     }
 }
