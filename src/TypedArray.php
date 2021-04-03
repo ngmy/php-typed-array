@@ -652,6 +652,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * @param mixed $key
      * @see https://www.php.net/manual/en/arrayaccess.offsetexists.php
+     *
+     * @phpstan-param TKey $key
+     *
+     * @psalm-param TKey $key
      */
     public function offsetExists($key): bool
     {
@@ -664,8 +668,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @return mixed
      * @see https://www.php.net/manual/en/arrayaccess.offsetget.php
      *
+     * @phpstan-param TKey $key
      * @phpstan-return TValue|null
      *
+     * @psalm-param TKey $key
      * @psalm-return TValue|null
      */
     public function offsetGet($key)
@@ -733,6 +739,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
     /**
      * @param mixed $key
      * @see https://www.php.net/manual/en/arrayaccess.offsetunset.php
+     *
+     * @phpstan-param TKey $key
+     *
+     * @psalm-param TKey $key
      */
     public function offsetUnset($key): void
     {
@@ -795,8 +805,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @param mixed $key
      * @return int|string|null
      *
+     * @phpstan-param TKey $key
      * @phpstan-return int|string|null
      *
+     * @psalm-param TKey $key
      * @psalm-return IntArrayKey|string
      */
     private function getKeyHashCode($key)
@@ -830,7 +842,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
             );
         }
         if (\is_null($key)) {
-            return $key;
+            return null;
         }
         if (\is_float($key)) {
             return \sprintf('%.30f', $key);
@@ -853,8 +865,10 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
      * @param mixed           $key
      * @param int|string|null $keyHashCode
      *
+     * @phpstan-param TKey            $key
      * @phpstan-param int|string|null $keyHashCode
      *
+     * @psalm-param TKey               $key
      * @psalm-param IntArrayKey|string $keyHashCode
      */
     private function keyExists($key, $keyHashCode): bool
@@ -862,6 +876,7 @@ class TypedArray implements ArrayAccess, Countable, IteratorAggregate
         if (!\is_object($key)) {
             return true;
         }
+        /** @psalm-var object $key */
         return isset($this->keys[$keyHashCode]) && (
             \method_exists($key, 'equals')
                 ? $key->equals($this->keys[$keyHashCode])
