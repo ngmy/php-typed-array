@@ -187,9 +187,10 @@ class TypedArrayPrimitiveKeyTest extends TestCase
             $this->expectException(get_class($expected));
         }
 
+        $typedArray = $this->createInstance($keyType);
+
         assert(is_array($keys));
 
-        $typedArray = $this->createInstance($keyType);
         foreach ($keys as $key) {
             $typedArray[$key] = $key;
         }

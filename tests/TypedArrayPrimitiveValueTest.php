@@ -110,10 +110,10 @@ class TypedArrayPrimitiveValueTest extends TestCase
             $this->expectException(get_class($exception));
         }
 
-        assert(is_array($values));
-
         // Test instantiation
         $typedArray = $this->createInstance($valueType);
+
+        assert(is_array($values));
 
         // Test setting the value without the offset
         foreach ($values as $key => $value) {
